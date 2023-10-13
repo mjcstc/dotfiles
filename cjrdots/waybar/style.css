@@ -1,0 +1,254 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+   font-family: JetBrainsMono Nerd system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+@import 'colors.css';
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+    
+}
+
+
+.modules-left {
+    color: whitesmoke;
+}
+
+.modules-center {
+    
+ background-color: rgba(1, 1, 1, 0.151);
+ color: white;
+border-radius: 20;
+ padding-left: 0px;
+ border: 0px solid transparent;
+ padding-right: 0px;
+ border-width: 5px;
+
+}
+
+.modules-right {
+      
+ background-color: rgba(1, 1, 1, 0.151);
+ color: white;
+border-radius: 20;
+ padding-left: 0px;
+ border: 0px solid transparent;
+ padding-right: 0px;
+ border-width: 5px;
+
+}
+
+#custom-nixos {
+    font-size: 25;
+}
+
+
+
+#user {
+    margin: 7px;
+    animation: animateBg 2s infinite linear;
+    border-radius: 14px;
+    background-image: linear-gradient(90deg, #45c9eb, #3574c7, #45c9eb, #3574c7);
+    background-size: 300% 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+@keyframes animateBg {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+
+   #battery,
+   #cpu,
+   #memory,
+   #disk,
+   #temperature,
+   #backlight,
+   #pulseaudio,
+   #wireplumber,
+   #custom-media,
+   #tray,
+   #mode,
+   #idle_inhibitor,
+   #scratchpad,
+   #mpd {
+      color: rgb(255, 255, 255);
+      padding: 0 8;
+      font-weight: 500;
+      
+  }
+
+  #workspaces button {
+    color: rgba(255, 255, 255, 0.596);
+    background-color: rgba(0, 0, 0, 0.308);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.383);
+    margin: 2px;
+    padding-left: 14;
+    padding-right: 14;
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+  #workspaces button.active {
+    color: #ffffff;
+    background-color: rgba(1, 1, 1, 0);
+    margin-left: 0px;
+    border-radius: 20px;
+    padding-left: 30;
+    padding-right: 30;
+    border: 1.5px solid black;
+    font-size: 13;
+    background-color: rgba(199, 199, 199, 0.486);
+    background-size: 300% 100%;
+    animation: animateBg 5s infinite linear;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+
+@keyframes gradient_f {
+	0% {
+		background-position: 0% 200%;
+	}
+    50% {
+        background-position: 200% 0%;
+    }
+	100% {
+		background-position: 400% 200%;
+	}
+}
+
+#clock {
+    font-family: JetBrainsMono Nerd Font;
+    font-weight: 600;
+    margin: 0;
+    animation: animateBg 2s infinite linear;
+    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    background-color: rgba(223, 223, 223, 0.438);
+    background-size: 300% 100%;
+   padding: 0;
+}
+
+#battery.charging {
+    background-color: rgba(30, 255, 0, 0.164);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 14px;
+    border-top-right-radius: 14px;
+    color: rgb(47, 235, 0);
+}
+
+#battery.icon {
+    border-bottom-right-radius: 14px;
+    background-color: rgba(0, 225, 255, 0.11);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 14px;
+    font-size: 12.5;
+    border-top-right-radius: 14px;
+    color: rgba(255, 255, 255, 0.692);
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+#pulseaudio {
+    font-weight: 700;
+    animation: animateBg 5s infinite linear;
+    background-color: rgba(95, 95, 95, 0.438);
+    border-radius: 15px;
+    color: rgb(240, 240, 240);
+    margin: 0;
+    background-size: 300% 100%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+#pulseaudio.muted {
+    animation: animateBg 5s infinite linear;
+    background-color: rgba(23, 107, 185, 0.507);
+    border-radius: 10;
+    color: rgb(240, 240, 240);
+    margin: 6.5px;
+    background-image: linear-gradient(90deg, #e97676, #e49449, #e97676, #e49449);
+    background-size: 300% 100%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+
+#temperature.critical {
+    animation: animateBg .5s infinite linear reverse;
+    background-color: rgba(23, 107, 185, 0.507);
+    border-radius: 10px;
+    color: rgb(240, 240, 240);
+    margin: 0px;
+    background-image: linear-gradient(115deg, #ff1818, #ffa41b, #ff1818, #ffa41b);
+    background-size: 300% 100%;
+    padding-left: 6px;
+    padding-right: 6px; 
+}
+
+
+
+#network {
+    padding-right: 5px;
+}
+
+#backlight {
+
+    animation: animateBg 5s infinite linear reverse;
+    background-color: rgba(223, 223, 223, 0.438);
+    border-radius: 10px;
+    color: rgb(240, 240, 240);
+    margin: 5px;
+    background-size: 300% 100%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+#battery.critical:not(  .charging) {
+    background-color: rgba(255, 0, 0, 0.192);
+    color: #ff1818;
+}
+
+
+#battery:not(.icon) {
+    background: transparent;
+}
+
+#battery.icon {
+    background-color: rgba(0, 0, 0, 0.329);
+}
+
+#cava {
+    border: 1.3px solid rgb(255, 255, 255);
+    margin: 3;
+    background-color: rgba(223, 223, 223, 0.438);
+    border-radius: 10;
+    padding-left: 10;
+    padding-right: 10;
+    background-color: rgba(223, 223, 223, 0.438);
+}
+
+
+#custom-power {
+    background-color: rgba(73, 73, 73, 0.397);
+    padding-left: 10;
+    font-size: 18;
+    font-weight: 900;
+    padding-right: 10;
+   border-radius: 20;
+}
+
+
+
+
+/* OG ACTIVE/ACCENT COLOR     background-color: rgba(0, 255, 221, 0.438);*/

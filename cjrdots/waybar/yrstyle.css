@@ -1,0 +1,208 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 13px;
+}
+
+window#waybar {
+    background: transparent;
+    
+}
+
+.modules-left {
+    color: whitesmoke;
+}
+
+.modules-center {
+ background-color: rgba(1, 1, 1, 0.301);
+ color: white;
+ border-top-left-radius: 0px;
+ border-bottom-left-radius: 14px;
+ border-top-right-radius: 14px;
+ padding-left: 0px;
+ border: 10px solid transparent;
+ padding-right: 0px;
+ border-width: 5px;
+
+}
+
+.modules-right {
+    background-color: rgba(0, 0, 0, 0.315);
+    color: white;
+    border-radius: 14px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 8;
+}
+
+#custom-nixos {
+    font-size: 25;
+}
+
+
+
+#user {
+    margin: 5px;
+    animation: animateBg 2s infinite linear;
+    border-radius: 14px;
+    background-image: linear-gradient(90deg, #da3287, #ffde5e, #da3287, #ffde5e);
+    background-size: 300% 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+@keyframes animateBg {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+
+  #battery,
+  #cpu,
+  #memory,
+  #disk,
+  #temperature,
+  #backlight,
+  #pulseaudio,
+  #wireplumber,
+  #custom-media,
+  #tray,
+  #mode,
+  #idle_inhibitor,
+  #scratchpad,
+  #mpd {
+      color: azure;
+      padding: 0 8;
+      
+  }
+
+  #workspaces button {
+    color: rgba(255, 255, 255, 0.877);
+    background-color: rgba(0, 0, 0, 0.24);
+    margin-left: 2px;
+    border-radius: 60px;
+    margin-top: 2px;
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+  #workspaces button.active {
+    color: #ffffff;
+    background-color: rgba(1, 1, 1, 0);
+    margin-left: 4px;
+    border-radius: 12px;
+    border:  .1px solid #ffffff;
+    margin-top: 2px;
+    padding-left: 15;
+    padding-right: 15;
+    background-image: linear-gradient(90deg, #da3287, #ffde5e, #da3287, #ffde5e);
+    background-size: 300% 100%;
+    animation: animateBg 5s infinite linear;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+
+@keyframes gradient_f {
+	0% {
+		background-position: 0% 200%;
+	}
+    50% {
+        background-position: 200% 0%;
+    }
+	100% {
+		background-position: 400% 200%;
+	}
+}
+
+#clock {
+    margin: 0;
+    animation: animateBg 2s infinite linear;
+    border-radius: 14px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-image: linear-gradient(90deg, #da3287, #ffde5e, #da3287, #ffde5e);
+    background-size: 300% 100%;
+   padding: 0;
+}
+
+#battery.charging {
+    background-color: rgba(30, 255, 0, 0.164);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 14px;
+    border-top-right-radius: 14px;
+    color: rgb(47, 235, 0);
+}
+
+#battery {
+    background-color: rgba(0, 225, 255, 0.11);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 14px;
+    border-top-right-radius: 14px;
+    color: rgb(0, 217, 255);
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+#pulseaudio {
+    animation: animateBg 5s infinite linear;
+    background-color: rgba(23, 107, 185, 0.507);
+    border-radius: 10px;
+    color: rgb(240, 240, 240);
+    margin: 6.5;
+    background-image: linear-gradient(90deg, #da3287, #ffde5e, #da3287, #ffde5e);
+    background-size: 300% 100%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+#pulseaudio.muted {
+    animation: animateBg 5s infinite linear;
+    background-color: rgba(23, 107, 185, 0.507);
+    border-radius: 10;
+    color: rgb(240, 240, 240);
+    margin: 6.5px;
+    background-image: linear-gradient(90deg, #e97676, #e49449, #e97676, #e49449);
+    background-size: 300% 100%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+
+#temperature.critical {
+    animation: animateBg .5s infinite linear reverse;
+    background-color: rgba(23, 107, 185, 0.507);
+    border-radius: 10px;
+    color: rgb(240, 240, 240);
+    margin: 0px;
+    background-image: linear-gradient(115deg, #ff1818, #ffa41b, #ff1818, #ffa41b);
+    background-size: 300% 100%;
+    padding-left: 6px;
+    padding-right: 6px; 
+}
+
+
+
+#network {
+    padding-right: 5px;
+}
+
+#backlight {
+    animation: animateBg 5s infinite linear reverse;
+    background-color: rgba(23, 107, 185, 0.507);
+    border-radius: 10px;
+    color: rgb(240, 240, 240);
+    margin: 6.5px;
+    background-image: linear-gradient(90deg, #da3287, #ffde5e, #da3287, #ffde5e);
+    background-size: 300% 100%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+#battery.critical:not(  .charging) {
+    background-color: rgba(255, 0, 0, 0.192);
+    color: #ff1818;
+}
