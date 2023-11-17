@@ -1,0 +1,524 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 20, // Waybar height (to be removed for auto height)
+  //"width": , // Waybar width
+   "spacing": 0, // Gaps between modules (4px)
+   // Choose the order of the modules
+   "margin": "0 0 0 0",
+   "modules-left": ["custom/nixos","hyprland/workspaces","","mpris","",""],
+   "modules-center": ["custom/weather#center","temperature#icon","","cpu#icon","","","memory#icon","gamemode","mpris#icon","pulseaudio#center"],
+   "modules-right": ["","hyprland/window","tray","","clock#date","clock#time","","custom/swaync","custom/search","pulseaudio#icon","gamemode","","",""],
+   // Modules configuration
+   "hyprland/workspaces": {
+	"format": "{icon}",
+    "format-active": "{icon} {name}",
+	"format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10",
+        "active:": ""
+	},
+       "persistent_workspaces": {
+             "HDMI-A-1": 7 // but only three on HDMI-A-1
+       }
+},
+   "keyboard-state": {
+       "numlock": true,
+       "capslock": true,
+       "format": "{name} {icon}",
+       "format-icons": {
+           "locked": "",
+           "unlocked": ""
+       }
+   },
+   "sway/mode": {
+       "format": "<span style=\"italic\">{}</span>"
+   },
+   "sway/scratchpad": {
+       "format": "{icon} {count}",
+       "show-empty": false,
+       "format-icons": ["", ""],
+       "tooltip": true,
+       "tooltip-format": "{app}: {title}"
+   },
+
+   "tray": {
+       "icon-size": 14,
+       "spacing": 7,
+       "reverse-direction": true 
+   },
+   "clock": {
+       //"timezone": "America/New_York",
+       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+       "format": "{: %A, %B, %d, %Y }",
+       "format-alt": "{: %I:%M %p }"
+   },
+   "cpu#icon": {
+       "format-alt": "{icon}   <span size='medium'>{usage}%</span>",
+       "format": "{icon}",
+       "format-icons": ["<span foreground='#6FBF52' size='x-large'>󰌪</span>","<span foreground='#D86C27'size='large'>󰾅</span>","<span foreground='#e46876'size='large'>󰓅</span>"],
+       "tooltip": false,
+       "on-right-click": "kitty btop",
+       "interval": 4,
+       "max-length": 8, 
+       "min-length": 8 
+       
+
+   },
+   "memory#icon": {
+       "format-alt": "{used:0.1f}GB   {icon} ",
+       "format": "{icon}",
+       "format-icons": ["<span foreground='#454545' size='x-large'></span>","<span foreground='#D86C27'size='large'>  </span>","<span foreground='#e46876'size='large'>󰓅 </span>"],
+       "interval": 4 
+      
+   },
+
+   "memory#usage": {
+    "format": "{used}GB",
+    "format-alt": "{used}GB",
+    "interval": 4
+},
+   "temperature#text": {
+    
+        //"thermal-zone": 2,
+       "interval": 1,
+       "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+       "format": "{temperatureC}°C",
+       "critical-threshold": 90,
+   },
+
+   "temperature#icon": {
+    //"thermal-zone": 2,
+   "interval": 1,
+   "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+   "critical-threshold": 90,
+   "format-icons": ["<span foreground='#67D8E2' size='x-large'></span>","<span foreground='#D86C27'size='x-large'>󰸁</span>"],
+   "format-alt": "{icon}   <span size='medium'>{temperatureC}󰔄</span>",
+   "format": "{icon}"
+},
+
+"backlight": {
+    "format": "{icon}",
+    "format-alt": "{percent}% {icon}",
+    "format-alt-click": "click-right",
+    "format-icons": [
+        ""
+    ]
+},
+   "battery#icon": {
+    "interval": 1,
+    "states": {
+        "warning": 30,
+        "critical": 20
+        },
+	"format": "{icon}",
+	"format-warning": "<span foreground='#ffffff'>{icon}</span>",
+	"format-critical": "<span foreground='#f36060'>{icon}</span>",
+	"format-charging": "<span foreground='#C6FFB4'>{icon}󱐋</span>",
+	"format-plugged": "<span foreground='#ffffff'>󱟢</span>",
+	"format-full": "<span foreground='#ffffff'>󱟢</span>",
+    "format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+    "format-icons-charging": ["󰢜","󰂆","󰂇","󰂇","󰂇","󰂉","󰂉","󰂉","󰂉","󰂅"]
+  },
+  "battery#percentage": {
+    "format-charging": "{capacity}%",
+    "format": "{capacity}%",
+    "tooltip-format": "{time}"
+  },
+   "battery#bat2": {
+       "bat": "BAT2"
+   },
+   "network": {
+       // "interface": "wlp2*", // (Optional) To force the use of this interface
+       "format-wifi": " ",
+       "format-ethernet": "{ipaddr}/{cidr} ",
+       "tooltip-format": "{ifname} via {gwaddr} ",
+       "format-linked": "{ifname} (No IP) ",
+       "format-disconnected": "Disconnected ⚠",
+       "format-alt": "{essid}  "
+       
+   },
+
+   
+   "pulseaudio#icon": {
+    "format-alt-click": "click-right",
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "<span foreground='#ff0000'>󰝟</span>",
+    "format-source": "{volume}% ",
+    "format-source-muted": " Muted",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+},
+
+"pulseaudio#center": {
+    "format-alt-click": "click-right",
+    "interval": 1,
+    // "scroll-step": 1, // %, can be a float
+    "format": "{format_source}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "<span foreground='#ff0000'>󰝟</span>",
+    "format-source": "<span foreground='#62FF5C' size='xx-large'>󰍬</span>",
+    "format-source-muted": "<span foreground='#1E1E1E' size='xx-large'>󰍬</span>",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pamixer --default-source 49 -t"
+},
+
+
+   "pulseaudio#percentage": {
+       // "scroll-step": 1, // %, can be a float
+       "format": "{volume}%",
+       "format-bluetooth": "{volume}% {icon} {format_source}",
+       "format-bluetooth-muted": " {icon} {format_source}",
+       "format-muted": "",
+       "format-source": "{volume}% ",
+       "format-source-muted": " Muted",
+       "format-icons": {
+           "headphone": "",
+           "hands-free": "",
+           "headset": "",
+           "phone": "",
+           "portable": "",
+           "car": "",
+           "default": ["", "", ""]
+       },
+       "on-click": "pavucontrol"
+   },
+   "custom/media": {
+       "format": "{icon} {}",
+       "return-type": "json",
+       "max-length": 10,
+       "format-icons": {
+           "spotify": "<span foreground='#66ff66' size='large'>󰾆</span>",
+           "default": "🎜"
+       },
+       "escape": true,
+       "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+       // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+
+       
+
+
+   },
+   "custom/nixos": {
+       "format": "",
+       "on-click": "foot",
+   },
+
+   "custom/search": {
+    "format":"<span size='large'>󰉌 </span>",
+    "on-click": "Thunar",
+},
+
+"user": {
+        "format": "{user}",
+        "interval": 60,
+        "height": 30,
+        "width": 30,
+        "icon": true,
+        "avatar": "~/Pictures/wallpapers/mountain.jpg"
+},
+
+  
+        "wlr/taskbar": {
+	"format": "{icon}",
+	"icon-size": 14,
+	"icon-theme": "Numix-Circle",
+	"tooltip-format": "{title}",
+	"on-click": "activate",
+	"on-click-middle": "close",
+	"ignore-list": [
+	    "Alacritty"
+	],
+	"app_ids-mapping": {
+		"firefoxdeveloperedition": "firefox-developer-edition"
+	},
+	"rewrite": {
+		"Firefox Web Browser": "Firefox",
+		"Foot Server": "Terminal"
+	}
+},
+
+"custom/power": {
+    "format": "󰤆",
+    "on-click": "wlogout"
+    
+},
+
+
+
+"clock#time": {
+	"format": "{:%I:%M %p}"
+  },
+
+  "clock#date": {
+    "format": "{:%a %b %d}"
+  },
+
+  "group/battery": {
+    "orientation": "horizontal",
+    "modules": [
+        "battery#percentage",
+        "battery#icon"
+    ]
+},
+
+
+"group/pulseaudio": {
+    "orientation": "horizontal",
+    "modules": [
+        "pulseaudio#icon",
+        "pulseaudio#percentage"
+    ]
+},
+
+"group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+        "cpu#icon",
+        "temperature#icon"
+    ]
+},
+
+
+"group/temperature": {
+    "orientation": "horizontal",
+    "modules": [
+        "temperature#text",
+        "temperature#icon"
+    ]
+},
+
+
+"hyprland/window": {
+    "format": "",
+    "rewrite": {
+        
+        "(.*) - osu!": "osu",
+        "(.*) — Mozilla Firefox": "🌎 $1",
+        "(.*) - fish": "> [$1]"
+    },
+    "separate-outputs": true
+    
+},
+
+
+
+
+"mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "interval": 10,
+    "consume-icons": {
+        "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+        "on": " "
+    },
+    "repeat-icons": {
+        "on": " "
+    },
+    "single-icons": {
+        "on": "1 "
+    },
+    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+},
+
+
+"custom/spotify": {
+    "format": "{icon} {}",
+    "escape": true,
+    "return-type": "json",
+    "max-length": 40,
+    "interval": 30, // Remove this if your script is endless and write in loop
+    "on-click": "playerctl -p spotify play-pause",
+    "on-click-right": "killall spotify",
+    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+    "on-scroll-up" : "playerctl -p spotify next",
+    "on-scroll-down" : "playerctl -p spotify previous",
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+    "exec-if": "pgrep spotify"
+},
+
+
+"mpris": {
+	"format": "{player_icon} {title}     {artist}",
+	"format-paused": "{player_icon}  {title} {artist}",
+    "max-length": 60,
+    "interval": 1,
+    "dynamic-order": ["title", "artist", "album", "position", "length"],
+	"player-icons": {
+		"default": "<span foreground='#45b3e7' size='xx-large'>󰝚 </span>",
+        "spotify": "<span foreground='#6FBF52'size='xx-large'>󰓇 </span>",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "⏸"
+	}
+	// "ignored-players": ["firefox"]
+},
+
+"mpris#icon": {
+	"format": "{status_icon}",
+    "interval": 0,
+	"format-paused": "{status_icon}",
+    "max-length": 40,
+	"player-icons": {
+		"default": "<span size='xx-large'>󰎆 </span>",
+        "spotify": "<span size='xx-large'>󰓇 </span>",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "<span size='xx-large'>󰝛 </span>",
+        "playing": "<span size='xx-large'>󰝚 </span>"
+	}
+	// "ignored-players": ["firefox"]
+},
+
+"mpris#icon2": {
+	"format": "{player_icon}",
+    "interval": 0,
+	"format-paused": "{status_icon}",
+    "max-length": 40,
+	"player-icons": {
+		"default": "<span size='xx-large'>󰎆 </span>",
+        "spotify": "<span size='xx-large'>󰓇 </span>",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "<span size='xx-large'>󰝛 </span>",
+        "playing": "<span size='xx-large'>󰝚 </span>"
+	}
+	// "ignored-players": ["firefox"]
+},
+
+"cava": {
+    //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+            "framerate": 72,
+           "autosens": 4,
+           "sensitivity": 1.5,
+            "sleep_timer": 1,
+            "interval": 1,
+            "bars": 7,
+            "lower_cutoff_freq": 50,
+            "higher_cutoff_freq": 20000,
+            "method": "pulse",
+            "source": "auto",
+            "stereo": true,
+            "reverse": true,
+            "bar_delimiter": 0,
+            "monstercat": true,
+            "waves": true,
+            "noise_reduction": 0.77,
+            "input_delay": 1,
+            "format-icons" : ["▁ ","▂ ","▃ ","▄ ","▅ ","▆ ", "▇ ", "█ " ],
+            "actions": {
+                       "on-click-right": "mode"
+                       }
+        },
+"gamemode": {
+    "format": "{glyph}",
+    "format-alt": "{glyph} {count}",
+    "hide-not-running": true,
+    "use-icon": true,
+    "icon-name": "input-gaming-symbolic",
+    "icon-spacing": 4,
+    "icon-size": 20,
+    "tooltip": true,
+    "tooltip-format": "Games running: {count}"
+},
+
+"hyprland/submap": {
+    "format": "✌️ {}",
+    "max-length": 8,
+    "tooltip": false
+},
+
+
+"custom/swaync": {
+    "tooltip": false,
+    "on-click": "swaync-client -t",
+    "format": "",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂚",
+      "dnd-notification": "󱏧<span foreground='red'><sup></sup></span>",
+      "dnd-none": "󱏧",
+      "inhibited-notification": "󰂚<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "󰂚",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": "󱏧"
+    }
+},
+
+"bluetooth": {
+	"format": " {status}",
+	"format-connected": " {device_alias}",
+	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+},
+
+"custom/weather": {
+    "format": "{} ° Nassau",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --fahrenheit --location Nassau,Bahamas",
+    "return-type": "json"
+},
+"custom/weather#center": {
+    "format": "{}° ",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --fahrenheit --location Nassau,Bahamas",
+    "return-type": "json"
+}
+
+
+
+
+
+
+
+
+
+}
+
+

@@ -1,0 +1,501 @@
+*{
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'JetBrainsMono Nerd Font';
+    font-weight: 600;
+    font-size: 13.px;
+    
+}
+/*@import url('file:///home/cjrminus/.cache/wal/colors.css');*/
+
+
+
+#custom-swaync {
+    padding-right: 12;
+}
+
+
+window#waybar {
+    background-color: rgb(0, 0, 0);
+    animation-name: pulse2;
+    animation-duration: .7s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    border-bottom: 0 solid rgb(0, 0, 0);
+    
+}
+     
+window#waybar.fullscreen {
+  background-color: rgba(0, 0, 0, 0.363);
+  animation-name: pulse;
+  animation-duration: .7s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+window#waybar.osu {
+    background-color: rgba(0, 0, 0, 0.363);
+    animation-name: pulse;
+    animation-duration: .7s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+  }        
+
+
+#temperature.critical {
+    border-bottom: #ff383865;
+    animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+     border-bottom: #f03030;
+    }
+  }
+
+  @keyframes blink2 {
+    to {
+     border-bottom: #66ff00;
+    }
+  }
+
+@keyframes pulse {
+    to{
+    background-color: rgb(0, 0, 0)
+    }
+}
+@keyframes pulse2 {
+    to{
+    background-color: rgba(0, 0, 0, 0.493)
+    }
+}
+
+/*
+   window#waybar.Spotify {
+    background-color: rgba(0, 0, 0, 0.226); 
+    border-bottom: 0 solid rgba(0, 0, 0, 0);
+    border-radius: 0;
+   color: white;
+   
+   }
+
+   window#waybar.brave {
+    background-size: 300% 100%;
+    animation: animateBg 3s infinite linear;
+    background-image: linear-gradient(90deg,rgba(0, 0, 255, 0.479),rgba(76, 0, 99, 0.479),rgba(0, 0, 255, 0.479),rgba(75, 0, 105, 0.479));
+    margin-left: 0;
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.39);
+    padding-left: 7;
+    padding-right: 7;
+    min-width: 10px;
+    font-size: 10;
+    border: 0 solid rgba(226, 226, 226, 0.308);
+   }
+   
+
+
+ MODULE GROUPS 
+
+.modules-center {
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 0;
+    border: 0  solid rgba(74, 75, 75, 0);
+    border-radius: 10;
+    margin: 0; 
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding-left: 4;
+    padding-right: 4;
+}
+
+*/
+
+.modules-left {
+    background: transparent;
+    margin-bottom: 0;
+    border: 0  solid rgba(255, 255, 255, 0);
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 24;
+    padding-right: 8;
+    border-left: 0;
+    border-bottom: 0;
+}
+
+.modules-right {
+margin: 0;
+border-bottom: 0 solid rgba(255, 255, 255, 0.438);
+padding-right: 12;
+color: rgba(255, 255, 255, 0.692);
+border-radius: 5;
+}
+
+/* Individual Modules */
+
+
+/* 
+#pulseaudio{
+    border: 1 solid rgba(255, 255, 255, 0);
+    font-size: 24;
+    background-color: rgba(47, 47, 47, 0); 
+    margin: 0;
+    font-weight: 600;
+    border-radius: 4;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#pulseaudio.percentage{
+    margin: 0;
+    font-size: 18;
+    border: 0;
+    background: transparent;
+}
+*/
+#pulseaudio.icon {
+    margin: 0;
+    border: 0;
+    background: transparent;
+    font-size: 18;
+    padding-right: 010;
+}
+
+#tray {
+    background-color: rgba(0, 0, 0, 0.411);
+    border: 0 solid rgb(255, 131, 131);
+    border-radius: 5;
+    margin-top: 2;
+    padding-left: 7;
+    padding-right: 7;
+    margin-bottom: 2;
+}
+
+#custom-nixos {
+font-size: 24;
+padding-left: 4;
+padding-right: 2;
+text-shadow: 2 2 5px rgba(0, 0, 0, 0.171);
+
+border-top-right-radius: 4;
+border-bottom-right-radius: 15;
+color: rgb(255, 255, 255);
+
+}
+
+#backlight {
+    font-size: 20;
+    margin: 0
+}
+#backlight.icons {
+    font-size: 24;
+    margin: 0;
+    border-radius: 0;
+    border-top-left-radius:  4;
+    border-top-right-radius: 4;
+    background-color: rgba(0, 255, 225, 0);
+    border: 0 solid rgba(0, 255, 225, 0);
+}
+
+#memory.icon {
+    font-size: 12;
+    margin: 0;
+    border-radius: 0;
+    background-color: rgba(0, 255, 225, 0);
+    border: 1 solid rgba(64, 255, 214, 0.459);
+}
+
+#memory.usage {
+    font-size: 10;
+}
+
+#custom-power {
+    background-color: rgba(0, 255, 225, 0);
+    padding-left:4;
+    font-size: 14;
+    font-weight: 900;
+    padding-right: 0;
+    border-top-right-radius: 8;
+    border-bottom-right-radius: 8;
+}
+
+
+#temperature.icon {
+    font-size: 12;
+    padding-left: 4;
+    padding-right: 10;
+    margin-left: 10;
+    margin-right: 5;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 14;
+    margin: 0;
+    text-shadow: 2 2 5px rgba(0, 0, 0, 0.39);
+    font-weight: 400;
+}
+
+
+#temperature.text {
+    font-size: 11;
+    padding: 0;
+    padding-right: 0;
+}
+
+
+@keyframes gradient_f_nh {
+	0% {
+		background-position: 0% 200%;
+	}
+	100% {
+		background-position: 200% 200%;
+	}
+}
+
+
+#clock.date {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 11.5;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    border-radius: 16;
+    padding-left: 10;
+    padding-right: 10;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.479);
+}
+
+#mpris.icon {
+    font-size: 22;
+}
+
+#clock.time {
+    border: 0 solid rgba(255, 255, 255, 0.637);
+    font-size: 13;
+    font-weight: 600;
+    background-color: rgba(47, 47, 47, 0); 
+    margin: 0;
+    border-radius: 4;
+    padding-left: 0;
+    padding-right: 0;
+    text-shadow: 2 2 5px rgba(0, 0, 0, 0.418);
+}
+
+#window {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    border-radius: 14;
+    padding-left: 7;
+    padding-right: 7;
+    min-width: 10px;
+    font-size: 11;
+    border: 0 solid rgba(255, 255, 255, 0.048)
+}
+
+#cava {
+    color: rgb(255, 255, 255);
+    border-radius: 5;
+    margin: 5;
+    padding-left: 8;
+    padding-right: 4;
+    font-size: 9;
+    border: 0 solid rgba(255, 255, 255, 0.671);
+    border-radius: 14;
+}
+
+#workspaces {
+border: 0 solid rgba(187, 187, 187, 0);
+border-radius: 4;
+margin: 0;
+margin-left: 0;
+background-color: rgba(78, 78, 78, 0);
+}
+
+
+#workspaces button {
+    min-width: 3px;
+    min-height: 2px;
+    
+  }
+
+
+  #workspaces button {
+    background-color: rgba(0, 0, 0, 0);
+    margin-right: 10px;
+    padding: 0px;
+    border-radius: 0;
+    padding-left: 2.5;
+    padding-right: 2.5;
+    margin-left: 10;
+    padding-bottom: 0px;
+    font-weight: bolder;
+    color: rgba(255, 255, 255, 0.521);
+    transition: all 0.35s cubic-bezier(.55,-0.68,.48,1.68);
+}
+  #workspaces button.active {
+    margin-left: 0;
+    padding-right:15;
+    padding-left: 10;
+    text-shadow: 2 2 2px rgba(0, 0, 0, 0.733);
+    border-radius: 4;
+    margin: 3;
+    margin-right: 0;
+    color: rgb(255, 255, 255);
+    background-color: rgba(59, 59, 59, 0.589);
+    border-bottom: 0 solid rgba(255, 255, 255, 0.521);
+  }
+
+
+
+@keyframes gradient_f {
+	0% {
+		background-position: 0% 200%;
+	}
+    50% {
+        background-position: 200% 0%;
+    }
+	100% {
+		background-position: 400% 200%;
+	}
+}
+
+
+#battery:not(.icon) {
+
+    font-size: 12;
+}
+#battery.percentage {
+    font-size: 11.5;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+    font-weight: 500;
+    padding-right: 0;
+}
+#battery.icon{
+    border: 0 solid rgba(40, 95, 61, 0);
+    font-size: 17;
+    background-color: rgba(47, 47, 47, 0); 
+    margin-left: 0;
+    padding-left: 2;
+    border-radius: 0;  
+    padding-right: 0;
+}
+
+
+#battery.charging {
+    border-bottom: 2 solid green;
+    animation-name: blink2;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#pulseaudio.muted {
+    border-bottom: 2 solid rgba(255, 158, 101, 0.74);
+    border-radius: 0;
+}
+
+
+
+
+#gamemode {
+    color: rgb(148, 191, 255);
+    border-bottom: 2 solid rgba(0, 102, 255, 0.377);
+    margin-right: 7;
+    padding-left: 4;
+}
+
+#cpu {
+    text-shadow: 2 2 5px rgba(0, 0, 0, 0.336);
+    margin-left: 0;
+    margin: 0;
+    padding-right: 6;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 20;
+    border: 0 solid rgba(255, 255, 255, 0.342);
+    padding-bottom: 2;
+    font-weight: 600;
+    color: black;
+}
+#custom-power {
+    margin-right: 8;
+}
+
+
+
+#battery {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+@keyframes animateBg {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+
+/*
+  #workspaces {
+    background-color: rgba(19, 19, 19, 0.918);
+    border: 2 solid rgba(95, 95, 95, 0.671);
+    border-radius: 10;
+    margin-top: 1;
+    margin-bottom: 1;
+    
+    }
+    
+    #workspaces button {
+        min-width: 3px;
+        min-height: 2px;
+      }
+    
+    
+      #custom-nixos {
+font-size: 23;
+padding-left: 4;
+padding-right: 14;
+text-shadow: 2 2 5px rgb(0, 0, 0);
+background: linear-gradient(90deg,rgb(143, 143, 143),rgb(87, 87, 87));
+border-top-right-radius: 4;
+border-bottom-right-radius: 15;
+color: rgb(255, 255, 255);
+background-size: 300% 100%;
+animation: animateBg 3s infinite linear;
+background-image: linear-gradient(90deg,rgb(255, 255, 255),rgb(158, 158, 158),rgb(255, 255, 255),rgb(158, 158, 158));
+}
+
+
+      #workspaces button {
+        background-color: rgba(255, 255, 255, 0);
+        margin-right: 10px;
+        padding: 0px;
+        padding-left: 10;
+        padding-right: 10;
+        margin-left: 10;
+        padding-bottom: 0px;
+        font-weight: bolder;
+        color: rgba(88, 88, 88, 0.651);
+        transition: all 0.35s cubic-bezier(.55,-0.68,.48,1.68);
+    }
+      #workspaces button.active {
+        margin-left: 0;
+        padding-right: 50;
+        padding-left: 50;
+        border-radius: 8;
+        margin-right: 0;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+      }
+    */
