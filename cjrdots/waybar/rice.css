@@ -1,8 +1,7 @@
 *{
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'JetBrainsMono Nerd Font';
-    font-weight: 600;
-    font-size: 13.px;
+    font-size: 12px;
     
 }
 /*@import url('file:///home/cjrminus/.cache/wal/colors.css');*/
@@ -10,7 +9,7 @@
 
 
 #custom-swaync {
-    padding-right: 12;
+    padding-right: 10;
 }
 
 
@@ -27,12 +26,13 @@ window#waybar {
 }
      
 window#waybar.fullscreen {
-  background-color: rgba(0, 0, 0, 0.363);
   animation-name: pulse;
+  background-color: rgba(0, 0, 0, 0.363);
   animation-duration: .7s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
   animation-direction: alternate;
+  color: #000000;
   animation-fill-mode: forwards;
 }
 
@@ -44,9 +44,8 @@ window#waybar.osu {
     animation-iteration-count: 1;
     animation-direction: alternate;
     animation-fill-mode: forwards;
-  }        
-
-
+  }   
+  
 #temperature.critical {
     border-bottom: #ff383865;
     animation-name: blink;
@@ -58,7 +57,8 @@ window#waybar.osu {
 
 @keyframes blink {
     to {
-     border-bottom: #f03030;
+     color: #008cff;
+     border-bottom: #008cff;
     }
   }
 
@@ -70,12 +70,12 @@ window#waybar.osu {
 
 @keyframes pulse {
     to{
-    background-color: rgb(0, 0, 0)
+    background-color: #cecece;
     }
 }
 @keyframes pulse2 {
     to{
-    background-color: rgba(0, 0, 0, 0.493)
+    background-color: rgba(0, 0, 0, 0)
     }
 }
 
@@ -119,24 +119,30 @@ window#waybar.osu {
 }
 
 */
-
+.modules-center {
+margin-bottom: 7;
+border-bottom: 0 solid rgba(255, 255, 255, 0.438);
+padding-right: 4;
+background-color: #000000;
+border-radius: 0;
+color: #000000;
+border-bottom-right-radius: 9;
+border-bottom-left-radius: 9;
+    
+}
 .modules-left {
-    background: transparent;
-    margin-bottom: 0;
-    border: 0  solid rgba(255, 255, 255, 0);
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 24;
-    padding-right: 8;
-    border-left: 0;
-    border-bottom: 0;
+
 }
 
 .modules-right {
-margin: 0;
+margin: .4;
 border-bottom: 0 solid rgba(255, 255, 255, 0.438);
-padding-right: 12;
-color: rgba(255, 255, 255, 0.692);
+padding-right: 2;
+color: rgba(7, 7, 7, 0.692);
+background-color: #cecece;
+text-shadow: 2 2 2px rgba(0, 0, 0, 0.452);
 border-radius: 5;
+
 }
 
 /* Individual Modules */
@@ -162,33 +168,60 @@ border-radius: 5;
 }
 */
 #pulseaudio.icon {
-    margin: 0;
-    border: 0;
-    background: transparent;
-    font-size: 18;
-    padding-right: 010;
+    background-color: rgba(25, 0, 70, 0);
+    border: 0 solid rgb(255, 131, 131);
+    border-radius: 3;
+    margin-top: 2;
+    padding-left: 5;
+    color: #000000;
+    padding-right: 15;
+    padding-left: 10;
+    margin-bottom: 2;
+    font-weight: 600;
+    margin-left: 4;
+
+    font-size: 17;
 }
 
 #tray {
-    background-color: rgba(0, 0, 0, 0.411);
-    border: 0 solid rgb(255, 131, 131);
+    background-color: rgba(0, 0, 0, 0.781);
+    border: 0 solid rgb(0, 0, 0);
     border-radius: 5;
-    margin-top: 2;
-    padding-left: 7;
-    padding-right: 7;
-    margin-bottom: 2;
+    margin-top: 3;
+    padding-left: 5;
+    color: #ffffff;
+    padding-right: 5;
+    margin-bottom: 3;
+    font-weight: 500;
+    margin-left: 4;
+    text-shadow: 5 5 5px rgb(0, 0, 0);
 }
 
 #custom-nixos {
-font-size: 24;
-padding-left: 4;
-padding-right: 2;
+font-size: 26;
+padding-left: 7;
+padding-right: 14;
 text-shadow: 2 2 5px rgba(0, 0, 0, 0.171);
 
 border-top-right-radius: 4;
 border-bottom-right-radius: 15;
-color: rgb(255, 255, 255);
 
+
+}
+
+
+#custom-weather {
+    background-color: rgb(255, 255, 255);
+    border: 0 solid rgb(255, 131, 131);
+    border-radius: 3;
+    margin-top: 2;
+    padding-left: 5;
+
+    padding-right: 5;
+    margin-bottom: 2;
+    font-weight: 400;
+    margin-left: 4;
+    text-shadow: 2 2 5px rgb(0, 0, 0);
 }
 
 #backlight {
@@ -205,40 +238,54 @@ color: rgb(255, 255, 255);
     border: 0 solid rgba(0, 255, 225, 0);
 }
 
-#memory.icon {
-    font-size: 12;
-    margin: 0;
-    border-radius: 0;
-    background-color: rgba(0, 255, 225, 0);
-    border: 1 solid rgba(64, 255, 214, 0.459);
-}
-
-#memory.usage {
-    font-size: 10;
+#memory {
+    background-color: rgba(0, 0, 0, 0.781);
+    border: 1 solid rgb(82, 82, 82);
+    border-radius: 3;
+    border: 0 solid rgb(27, 23, 255);
+    border-radius: 6;
+    margin-top: 2;
+    padding-left: 5;
+    color: #ffffff;
+    padding-right: 5;
+    margin-bottom: 2;
+    font-weight: 500;
+    margin-left: 2;
+    text-shadow: 5 5 5px rgb(0, 0, 0);
 }
 
 #custom-power {
     background-color: rgba(0, 255, 225, 0);
     padding-left:4;
-    font-size: 14;
+    font-size: 17;
     font-weight: 900;
     padding-right: 0;
     border-top-right-radius: 8;
     border-bottom-right-radius: 8;
 }
 
+#cpu.icon,
+#memory.icon,
+#temperature.icon {
+    margin-left: 5;
+    margin-right: 5;
+}
 
 #temperature.icon {
-    font-size: 12;
-    padding-left: 4;
-    padding-right: 10;
-    margin-left: 10;
-    margin-right: 5;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 14;
-    margin: 0;
-    text-shadow: 2 2 5px rgba(0, 0, 0, 0.39);
-    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.781);
+    border: 1 solid rgb(80, 80, 80);
+    border-radius: 5;
+    border:  solid rgb(27, 23, 255);
+    border-radius: 6;
+    margin-top: 2;
+    padding-left: 5;
+    color: #ffffff;
+    padding-right: 9;
+    margin-bottom: 2;
+    font-weight: 500;
+    margin-left: 4;
+    text-shadow: 5 5 5px rgb(0, 0, 0);
+   
 }
 
 
@@ -261,60 +308,77 @@ color: rgb(255, 255, 255);
 
 #clock.date {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 500;
-    font-size: 11.5;
-    background-color: rgba(0, 0, 0, 0);
-    margin: 0;
-    border-radius: 16;
-    padding-left: 10;
-    padding-right: 10;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.479);
+    font-weight: 400;
+    font-size: 12;
+    background-color: rgba(25, 0, 70, 0);
+    border: 0 solid rgb(255, 131, 131);
+    border-radius: 3;
+    margin-top: 2;
+    padding-left: 5;
+    text-shadow: 2 2 5px rgb(0, 0, 0);
+    padding-right: 5;
+    margin-bottom: 2;
+    margin-left: 4;
+   
+
+
 }
 
 #mpris.icon {
-    font-size: 22;
+    color: #008cff;
+}
+
+#mpris {
+    font-size: 11;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    background-color: rgb(193, 126, 255);
+    border: 0 solid rgb(255, 131, 131);
+    border-radius: 3;
+    text-shadow: 5 5 5px rgb(0, 0, 0);
+    margin-top: 2;
+    padding-left: 5;
+    color: #ffffff;
+    padding-right: 5;
+    margin-bottom: 2;
+    margin-left: 4;
+
+    
 }
 
 #clock.time {
-    border: 0 solid rgba(255, 255, 255, 0.637);
-    font-size: 13;
-    font-weight: 600;
-    background-color: rgba(47, 47, 47, 0); 
-    margin: 0;
-    border-radius: 4;
-    padding-left: 0;
-    padding-right: 0;
-    text-shadow: 2 2 5px rgba(0, 0, 0, 0.418);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 12;
+    background-color: rgba(25, 0, 70, 0);
+    border: 0 solid rgb(255, 131, 131);
+    border-radius: 3;
+    margin-top: 2;
+    padding-left: 5;
+
+    padding-right: 5;
+    margin-bottom: 2;
+    margin-left: 4;
+
+    
 }
 
 #window {
-    background-color: rgba(0, 0, 0, 0);
-    margin: 0;
-    border-radius: 14;
-    padding-left: 7;
-    padding-right: 7;
-    min-width: 10px;
-    font-size: 11;
-    border: 0 solid rgba(255, 255, 255, 0.048)
+
+padding-left: 0;
 }
 
+
 #cava {
-    color: rgb(255, 255, 255);
-    border-radius: 5;
-    margin: 5;
-    padding-left: 8;
-    padding-right: 4;
-    font-size: 9;
-    border: 0 solid rgba(255, 255, 255, 0.671);
-    border-radius: 14;
+   
 }
 
 #workspaces {
 border: 0 solid rgba(187, 187, 187, 0);
-border-radius: 4;
-margin: 0;
+border-radius: 5;
+margin: 2;
 margin-left: 0;
-background-color: rgba(78, 78, 78, 0);
+font-weight: 100;
 }
 
 
@@ -326,29 +390,33 @@ background-color: rgba(78, 78, 78, 0);
 
 
   #workspaces button {
-    background-color: rgba(0, 0, 0, 0);
-    margin-right: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgba(0, 0, 0, 0.24);
     padding: 0px;
-    border-radius: 0;
-    padding-left: 2.5;
-    padding-right: 2.5;
-    margin-left: 10;
-    padding-bottom: 0px;
-    font-weight: bolder;
-    color: rgba(255, 255, 255, 0.521);
+    border-radius: 4;
+    padding-left: 13;
+    padding-right: 13;
+    margin-left: 1;
+    font-weight: 400;
+    margin-right: 1;
+    border: 0 solid rgba(158, 158, 158, 0.253);
+    color: rgba(117, 117, 117, 0.637);
     transition: all 0.35s cubic-bezier(.55,-0.68,.48,1.68);
 }
   #workspaces button.active {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: normal;
+    font-size: 12;
+
     margin-left: 0;
-    padding-right:15;
-    padding-left: 10;
-    text-shadow: 2 2 2px rgba(0, 0, 0, 0.733);
-    border-radius: 4;
-    margin: 3;
+    padding-right: 30;
+    padding-left: 30;
+    text-shadow: 2 2 2px rgba(0, 0, 0, 0);
+    margin: 0;
     margin-right: 0;
-    color: rgb(255, 255, 255);
-    background-color: rgba(59, 59, 59, 0.589);
-    border-bottom: 0 solid rgba(255, 255, 255, 0.521);
+    color: #080808;
+    background-color: rgba(255, 255, 255, 0.897);
+    border: 1.4 solid rgba(20, 83, 255, 0.521);
   }
 
 
@@ -399,34 +467,59 @@ background-color: rgba(78, 78, 78, 0);
 }
 
 #pulseaudio.muted {
-    border-bottom: 2 solid rgba(255, 158, 101, 0.74);
-    border-radius: 0;
+    border-bottom: 0 solid rgba(255, 0, 0, 0.74);
+
 }
-
-
+#custom-swaync,
+#custom-search {
+    padding-left: 12px;
+    font-size: 14;
+    
+}
 
 
 #gamemode {
-    color: rgb(148, 191, 255);
-    border-bottom: 2 solid rgba(0, 102, 255, 0.377);
-    margin-right: 7;
-    padding-left: 4;
+    color: rgba(0, 153, 255, 0.178);
+    border-bottom: 0 solid rgb(0, 81, 255);
+    margin-left: 4;
+    padding-left: 3;
+    text-shadow: 5 5 5px rgb(0, 0, 0);
+    animation-name: blink;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+     
 }
 
-#cpu {
-    text-shadow: 2 2 5px rgba(0, 0, 0, 0.336);
-    margin-left: 0;
-    margin: 0;
-    padding-right: 6;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 20;
-    border: 0 solid rgba(255, 255, 255, 0.342);
-    padding-bottom: 2;
-    font-weight: 600;
-    color: black;
+#cpu.icon {
+    background-color: rgba(0, 0, 0, 0.781);
+    border: 0 solid rgb(27, 23, 255);
+    border-radius: 6;
+    margin-top: 2;
+    padding-left: 5;
+    color: #ffffff;
+    padding-right: 5;
+    margin-bottom: 2;
+    font-weight: 500;
+    margin-left: 4;
+    text-shadow: 5 5 5px rgb(0, 0, 0);
 }
 #custom-power {
-    margin-right: 8;
+    margin-right: 0;
+    background-color: rgba(155, 53, 53, 0.671);
+    border: 1 solid rgb(255, 0, 0);
+    border-radius: 5;
+    margin-top: 2;
+    padding-left: 10;
+    color: #ffffff;
+    padding-right: 15;
+    margin-bottom: 2;
+    margin: 2;
+    font-weight: 600;
+    margin-left: 8;
+    text-shadow: 5 5 5px rgb(0, 0, 0);
+    
 }
 
 

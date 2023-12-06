@@ -11,7 +11,7 @@ notify_view() {
 	${notify_cmd_shot} "Copied to clipboard."
 ##	viewnior ${dir}/"$file"
 	if [[ -e "$dir/$file" ]]; then
-		${notify_cmd_shot} "Screenshot Saved."
+		${notify_cmd_shot} "Screenshot Saved." "Copied to clipboard. Check Screenshot directory for result"
 	else
 		${notify_cmd_shot} "Screenshot Deleted."
 	fi
@@ -54,7 +54,7 @@ shotwin() {
 }
 
 shotarea() {
-	cd ${dir} && grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | tee "$file" | wl-copy
+	cd ${dir} && grim -l 0 -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 0)" - | tee "$file" | wl-copy
 	notify_view
 }
 

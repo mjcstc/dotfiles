@@ -9,7 +9,7 @@
    "margin": "0 0 0 0",
    "modules-right": [""],
    "modules-left": ["","",""],
-   "modules-right": ["hyprland/window","keyboard-state","tray","gamemode","custom/power","pulseaudio#icon","backlight","group/temperature","group/battery","clock#date","clock#time"],
+   "modules-center": ["hyprland/window","keyboard-state","tray","gamemode","custom/power","pulseaudio#icon","backlight","group/temperature","group/battery","clock#date","clock#time"],
    // Modules configuration
    "hyprland/workspaces": {
 	"format": "{icon}",
@@ -79,7 +79,7 @@
     
         //"thermal-zone": 2,
        "interval": 1,
-       "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+       "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
        "format": "{temperatureC}°C",
        "critical-threshold": 90,
    },
@@ -87,7 +87,7 @@
    "temperature#icon": {
     //"thermal-zone": 2,
    "interval": 1,
-   "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+   "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
    "critical-threshold": 90,
    "format-critical": "<span foreground='#e46876'>{icon}</span>",
    "format": "{icon}",

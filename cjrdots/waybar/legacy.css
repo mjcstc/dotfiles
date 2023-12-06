@@ -1,0 +1,189 @@
+*{
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: 700;
+    font-size: 13px;
+}
+
+#test {
+    background-color: rgba(0, 0, 0, 0.521);
+}
+
+window#waybar {
+ background-color: @theme_bg_color;     
+ border: 2 solid #86a4c1;
+border-radius: 10;
+color: white;
+}
+
+#custom-nixos {
+    font-size: 25;
+    padding-left: 4;
+    color: #77c6ff;
+    padding-left: 10;
+}
+
+#custom-power {
+    font-size: 17;
+    padding-right: 3;
+    padding-left: 5;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    border-radius: 14;
+    border: 1 solid transparent;
+    padding-left: 4;
+    font-size: 10;
+}
+
+#workspaces {
+
+  background: linear-gradient(90deg, #0089e4, #77cdff, #0089e4, #84d2ff, #58bcff);
+  background-size: 1800% 1800%;
+  border-radius: 10;
+  animation: rainbow 10s infinite linear;
+}
+
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+
+#user {
+    animation: animateBg 10s infinite ;
+    background-color: rgba(23, 120, 185, 0.507);
+    border-radius: 10px;
+    margin: 7;
+    background-size: 300% 100%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+#network {
+    padding-left: 4;
+}
+
+#workspaces button {
+    color: #343746;
+    border-radius: 5;
+    margin: 0;
+    }
+    
+
+#battery {
+    padding-right: 9;
+}
+
+
+
+#clock {
+    margin: 3;
+    animation: animateBg 2s infinite linear;
+    border-radius: 8px;
+    background-color: @theme_bg_color;
+
+   padding: 0;
+}
+
+.modules-center {
+    background-color: #86a4c1;
+    font-size: large;
+    margin: 5;
+    border: 0 solid @theme_text_color;
+    animation: animateBg 10s infinite linear;
+    border-radius: 10px;
+    background-size: 300% 100%;
+    padding-left: 6px;
+    padding-right: 0px;
+    border-top: 0 solid @theme_text_color;
+    border-bottom: 0 solid @theme_text_color;
+}
+
+.modules-right {
+    background-color: rgba(0, 0, 0, 0.274);
+    margin: 6;
+    border: 1 solid #86a4c1;
+    animation: animateBg 10s infinite linear;
+    border-radius: 5px;
+    background-size: 300% 100%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+#tray {
+    margin-right: 6;
+    padding-right: 10;
+    padding-left: 10;
+    background-color: rgba(36, 36, 36, 0.349);
+    border-radius: 14;
+}
+
+#battery {
+    padding-left: 8;
+}
+
+
+#temperature {
+    padding-left: 7;
+    color: @error_color_breeze;
+}
+
+#custom-power {
+    color: #ffffff;
+}
+
+#battery.full {
+    background-color: transparent;
+    color: @success_color_breeze;
+}
+
+#battery.charging {
+    background-color: rgba(30, 255, 0, 0.164);
+    border-radius: 5px;
+    color: rgb(75, 160, 36);
+}
+
+#battery {
+    background-color: @success_color;
+    border-radius: 8;
+    padding-left: 9px;
+    padding-right: 9px;
+    margin: 3;
+}
+
+#pulseaudio {
+    animation: animateBg 10s infinite linear;
+    background-color: @theme_button_decoration_focus_insensitive_breeze;
+    border-radius: 5px;
+    margin: 2;
+    background-size: 300% 100%;
+    padding-left: 6px;
+    padding-right: 6px; 
+}
+
+
+#battery.critical:not(  .charging) {
+    background-color: rgba(255, 0, 0, 0.192);
+    color: #ff1818;
+}
+@keyframes animateBg {
+	0% {
+		background-position: 0% 200%;
+	}
+    50% {
+        background-position: 200% 0%;
+    }
+	100% {
+		background-position: 400% 200%;
+	}
+}
+
+#temperature,
+#memory {
+    padding-left: 3;
+    padding-right: 10;
+    color: @theme_button_decoration_focus_breeze;
+}

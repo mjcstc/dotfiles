@@ -1,0 +1,725 @@
+*{
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: pretendard;
+    font-size: 12px;
+    
+}
+/*@import url('file:///home/cjrminus/.cache/wal/colors.css');*/
+
+
+
+#custom-swaync {
+    padding-right: 17;
+}
+
+#custom-search {
+    padding-right: 3;
+}
+
+window#waybar {
+    background-color: rgb(0, 0, 0);
+    animation-duration: .7s;
+    animation-name: pulse2;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    border-bottom: 0 solid rgb(0, 0, 0);
+    color: #e9e9e9;
+}
+     
+window#waybar.fullscreen {
+  animation-name: pulse;
+  background-color: rgba(0, 0, 0, 0.932);
+  animation-duration: .7s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  color: #ffffff;
+  animation-fill-mode: forwards;
+}
+
+window#waybar.solo {
+
+    background-color: rgba(0, 0, 0, 0.582);
+
+  }
+
+window#waybar.osu {
+    background-color: rgba(0, 0, 0, 0.363);
+    animation-name: pulse;
+    animation-duration: .7s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+  }   
+  
+#temperature.critical {
+    border-bottom: #ff383865;
+    animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+     color: #008cff;
+     border-bottom: #008cff;
+    }
+  }
+
+  @keyframes blink2 {
+    to {
+     border-bottom: #66ff00;
+    }
+  }
+
+@keyframes pulse {
+    to{
+    background: linear-gradient(rgb(0, 0, 0));
+    }
+}
+@keyframes pulse2 {
+    from{ background-color: #0e0e0e
+    }
+    to{
+        background-color: rgba(0, 0, 0, 0.231);
+    }
+}
+
+/*
+   window#waybar.Spotify {
+    background-color: rgba(0, 0, 0, 0.226); 
+    border-bottom: 0 solid rgba(0, 0, 0, 0);
+    border-radius: 0;
+   color: white;
+   
+   }
+
+   window#waybar.brave {
+    background-size: 300% 100%;
+    animation: animateBg 3s infinite linear;
+    background-image: linear-gradient(90deg,rgba(0, 0, 255, 0.479),rgba(76, 0, 99, 0.479),rgba(0, 0, 255, 0.479),rgba(75, 0, 105, 0.479));
+    margin-left: 0;
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.39);
+    padding-left: 7;
+    padding-right: 7;
+    min-width: 10px;
+    font-size: 10;
+    border: 0 solid rgba(226, 226, 226, 0.308);
+   }
+   
+
+
+ MODULE GROUPS 
+
+.modules-center {
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 0;
+    border: 0  solid rgba(74, 75, 75, 0);
+    border-radius: 10;
+    margin: 0; 
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding-left: 4;
+    padding-right: 4;
+}
+
+*/
+.modules-center {
+    margin: 3;
+    font-weight: 400;
+    padding-right: 4;
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    border-bottom-right-radius: 8;
+    border-bottom-left-radius: 8;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.438);
+    
+}
+#cpu.icon,
+#memory.icon,
+#temperature.icon {
+
+}
+
+
+.modules-left {
+    margin: 0;
+    font-weight: 400;
+    border: 0 solid rgb(0, 0, 0);
+    border-top: 0 solid black;
+    padding-right: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 2;
+    margin-right: 10;
+    border-radius: 10;
+    text-shadow: 0 0 6px rgb(0, 0, 0);
+    
+}
+
+.modules-right {
+    font-weight: 400;
+
+    border-top: 0 solid black;
+    padding-right: 4;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(255, 255, 255);
+
+    text-shadow: 2 2 2px rgba(0, 0, 0, 0.479);
+
+}
+
+/* Individual Modules */
+
+
+/* 
+#pulseaudio{
+    border: 1 solid rgba(255, 255, 255, 0);
+    font-size: 24;
+    background-color: rgba(47, 47, 47, 0); 
+    margin: 0;
+    font-weight: 600;
+    border-radius: 4;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#pulseaudio.percentage{
+    margin: 0;
+    font-size: 18;
+    border: 0;
+    background: transparent;
+}
+*/
+#pulseaudio.icon {
+    background-color: rgba(25, 0, 70, 0);
+    border: 0 solid rgb(255, 131, 131);
+    border-radius: 3;
+    margin-top: 2;
+    padding-left: 5;
+    padding-right: 15;
+    padding-left: 10;
+    margin-bottom: 2;
+    font-weight: 600;
+    margin-left: 4;
+
+    font-size: 17;
+}
+
+#tray {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1.5 solid rgba(255, 255, 255, 0);
+    border-radius: 20;
+    margin-top: 5;
+    padding-left: 5;
+    color: #9e9e9e;
+    padding-right: 5;
+    margin-bottom: 5;
+    font-weight: 500;
+    margin-left: 10;
+    text-shadow: 5 5 5px rgb(0, 0, 0);
+}
+
+#custom-nixos {
+font-size: 26;
+padding-left: 8;
+padding-right: 5;
+text-shadow: 3 3 3px rgba(0, 0, 0, 0.151);
+border-top-right-radius: 4;
+border-bottom-right-radius: 15;
+
+
+}
+
+
+
+
+#custom-weather.center {
+    font-weight: 600;
+
+  padding-right: 7;
+  margin-left: 12;
+  padding-left: 7;
+  border:0 solid rgba(39, 39, 39, 0.226);
+  margin: 0;
+  padding-right: 8;
+  background-color: rgba(255, 255, 255, 0.705);
+  color: #000000;
+  
+  text-shadow: 0 0 4px rgb(0, 0, 0);
+  margin: 0;
+  margin: 3;
+
+
+}
+#custom-browser {
+    font-size: 17;
+    padding-right: 16;
+    margin-bottom: 2;
+    padding-left: 16;
+  }
+#custom-weather.center.fullscreen {
+    font-weight: 700;
+    border-radius: 0;
+    border: 0 solid rgb(0, 162, 255);
+    padding-right: 8;
+    background-color: rgb(0, 0, 0);
+    color: #000000;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 20;
+    text-shadow: 0 0 6px rgb(0, 0, 0);
+    margin: 0;
+    border-top-right-radius: 25;
+}
+
+#custom-weather {
+    background-color: rgb(255, 255, 255);
+    border: 0 solid rgba(0, 140, 255, 0);
+    border-radius: 19;
+    padding-left: 5;
+    color: #000000;
+    padding-right: 8;
+    font-weight: 600;
+    margin-left: 4;
+    text-shadow: 2 2 5px rgb(0, 0, 0);
+    margin: 6;
+}
+
+
+#pulseaudio.center {
+    animation-name: transmitting;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  
+   
+
+}
+#pulseaudio.center.muted {
+    animation-name: shift;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+
+
+#backlight {
+    font-size: 20;
+    margin: 0
+}
+#backlight.icons {
+    font-size: 24;
+    margin: 0;
+    border-radius: 0;
+    border-top-left-radius:  4;
+    border-top-right-radius: 4;
+    background-color: rgba(0, 255, 225, 0);
+    border: 0 solid rgba(0, 255, 225, 0);
+}
+
+#memory {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1.5 solid rgba(158, 158, 158, 0);
+    border-radius: 6;
+    margin-top: 2;
+    padding-left: 5;
+    padding-right: 16;
+    margin-bottom: 2;
+    font-weight: 500;
+    margin-left: 4;
+
+    
+}
+
+#custom-power {
+    background-color: rgba(0, 255, 225, 0);
+    padding-left:4;
+    font-size: 15;
+    font-weight: 900;
+    padding-right: 7;
+    margin-bottom: 0;
+    border-top-right-radius: 8;
+    border-bottom-right-radius: 8;
+}
+
+
+#temperature.icon {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1.5 solid rgba(158, 158, 158, 0);
+    border-radius: 6;
+    margin-top: 2;
+    padding-left: 9;
+    padding-right: 10;
+    margin-bottom: 2;
+    font-weight: 500;
+    margin-left: 4;
+  
+   
+}
+
+#temperature.text {
+    font-size: 11;
+    padding: 0;
+    padding-right: 0;
+}
+
+
+@keyframes gradient_f_nh {
+	0% {
+		background-position: 0% 200%;
+	}
+	100% {
+		background-position: 200% 200%;
+	}
+}
+
+
+#clock.date {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1.5 solid rgba(255, 255, 255, 0);
+    border-radius: 20;
+    margin-top: 0;
+    padding-left: 5;
+    color: #ffffff;
+    padding-right: 0;
+    font-weight: 600;
+    margin-left: 10;
+    text-shadow: 1 1 2px rgba(0, 0, 0, 0.301);
+
+
+
+}
+
+
+
+#mpris.icon.spotify{
+    color: #3fff48;
+    background-color:transparent;
+    padding-left: 12;
+    margin: 0;
+  }
+
+#mpris.spotify {
+    font-size: 11;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 16;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.356);
+    border: 0 solid rgb(255, 131, 131);
+    text-shadow: 3 3 3px rgb(0, 0, 0);
+    margin-top: 2;
+    padding-left: 5;
+    color: #ffffff;
+    padding-right: 5;
+    margin-bottom: 2;
+    margin-left: 4;
+
+    
+}
+
+#mpris {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 11;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0px;
+    margin: 0;
+    border-radius: 14;
+    padding-left: 7;
+    padding-right: 7;
+    margin-left: 1;
+    font-weight: 700;
+    margin-right: 1;
+    border: 0 solid rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 0.637);
+    transition: all 0.35s cubic-bezier(.55,-0.68,.48,1.68);
+    text-shadow: 1 1 3px rgba(0, 0, 0, 0.301);
+    
+}
+
+
+
+#clock.time {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 13;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1.5 solid rgba(255, 255, 255, 0);
+    border-radius: 20;
+    margin-right: 4;
+    padding-left: 6;
+    color: #ffffff;
+    padding-right: 5;
+    font-weight: 600;
+    margin-left: 0;
+    
+    text-shadow: 5 5 5px rgba(0, 0, 0, 0);
+    text-shadow: 1 1 2px rgba(0, 0, 0, 0.301);
+    
+}
+
+#window {
+    padding-left: 0;
+    font-weight: 700;
+}
+
+@keyframes shift {
+    from {
+        color: rgb(62, 255, 126);
+
+    }
+    to {
+        color: rgb(255, 62, 62);
+        
+    }
+    
+}
+
+@keyframes shift2 {
+    to {
+        color: rgb(162, 62, 255);
+    
+    }
+    
+}
+#mpris.icon {
+    color: rgb(162, 62, 255);
+    animation-name: shift2;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    padding-right: 8;
+    padding-left: 16;
+    margin-right: 10;
+    
+}
+
+#mpris.icon.paused {
+    animation-name: shift;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+
+#cava {
+    padding-left: 7;
+   color: rgba(255, 255, 255, 0.267);
+   font-size: 6;
+}
+
+
+#workspaces {
+    border: 2 solid rgba(255, 255, 255, 0);
+    border-radius: 10;
+    margin: 5;
+    font-weight: 100;
+    background-color: rgba(0, 0, 0, 0);
+    
+    color: #ffffff;
+    text-shadow: 0 0 6px rgb(0, 0, 0);
+    }
+    
+    
+    #workspaces button {
+        min-width: 3px;
+        min-height: 2px;
+        
+      }
+    
+    
+      #workspaces button {
+        font-family: pretendard;
+        background-color: rgba(0, 0, 0, 0);
+        padding: 0px;
+        margin: 0;
+        border-radius: 8;
+        padding-left: 7;
+        padding-right: 7;
+        margin-left: 1;
+        font-weight: 400;
+        margin-right: 1;
+        border: 0 solid rgba(0, 0, 0, 0);
+        color: rgba(255, 255, 255, 0.637);
+        transition: all 0.35s cubic-bezier(0,-0.48,0,1.68);
+    }
+      #workspaces button.active {
+
+        font-weight: normal;
+        font-size: 10;
+        margin-left: 0;
+        padding-right: 25;
+        padding-left: 25;
+        text-shadow: 2 2 2px rgba(255, 255, 255, 0);
+        margin-right: 0;
+        color: #ffffff;
+        background-color: rgb(255, 255, 255);
+        margin: 2;
+        margin-left: 7;
+      }
+    
+    
+    
+@keyframes gradient_f {
+	0% {
+		background-position: 0% 200%;
+	}
+    50% {
+        background-position: 200% 0%;
+    }
+	100% {
+		background-position: 400% 200%;
+	}
+}
+
+
+#battery:not(.icon) {
+
+    font-size: 12;
+}
+#battery.percentage {
+    font-size: 11.5;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+    font-weight: 500;
+    padding-right: 0;
+}
+#battery.icon{
+    border: 0 solid rgba(40, 95, 61, 0);
+    font-size: 17;
+    background-color: rgba(47, 47, 47, 0); 
+    margin-left: 0;
+    padding-left: 2;
+    border-radius: 0;  
+    padding-right: 0;
+}
+
+
+#battery.charging {
+    border-bottom: 2 solid green;
+    animation-name: blink2;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+
+#custom-swaync,
+#custom-search {
+    padding-left: 12px;
+    font-size: 14;
+    
+}
+
+
+#pulseaudio.center {
+    padding-right: 18;
+    padding-left: 6;
+    }
+
+#gamemode {
+    color: rgba(255, 255, 255, 0.178);
+    border-bottom: 0 solid rgb(0, 81, 255);
+    margin-left: 4;
+    padding-left:24;
+    padding-right: 12;
+    text-shadow: 5 5 5px rgb(0, 0, 0);
+    animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+     
+}
+
+#cpu {
+   padding-right: 8;
+}
+
+
+
+
+#battery {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+@keyframes animateBg {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+
+/*
+  #workspaces {
+    background-color: rgba(19, 19, 19, 0.918);
+    border: 2 solid rgba(95, 95, 95, 0.671);
+    border-radius: 10;
+    margin-top: 1;
+    margin-bottom: 1;
+    
+    }
+    
+    #workspaces button {
+        min-width: 3px;
+        min-height: 2px;
+      }
+    
+    
+      #custom-nixos {
+font-size: 23;
+padding-left: 4;
+padding-right: 14;
+text-shadow: 2 2 5px rgb(0, 0, 0);
+background: linear-gradient(90deg,rgb(143, 143, 143),rgb(87, 87, 87));
+border-top-right-radius: 4;
+border-bottom-right-radius: 15;
+color: rgb(255, 255, 255);
+background-size: 300% 100%;
+animation: animateBg 3s infinite linear;
+background-image: linear-gradient(90deg,rgb(255, 255, 255),rgb(158, 158, 158),rgb(255, 255, 255),rgb(158, 158, 158));
+}
+
+
+      #workspaces button {
+        background-color: rgba(255, 255, 255, 0);
+        margin-right: 10px;
+        padding: 0px;
+        padding-left: 10;
+        padding-right: 10;
+        margin-left: 10;
+        padding-bottom: 0px;
+        font-weight: bolder;
+        color: rgba(88, 88, 88, 0.651);
+        transition: all 0.35s cubic-bezier(.55,-0.68,.48,1.68);
+    }
+      #workspaces button.active {
+        margin-left: 0;
+        padding-right: 50;
+        padding-left: 50;
+        border-radius: 8;
+        margin-right: 0;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+      }
+    */
