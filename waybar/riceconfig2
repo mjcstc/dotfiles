@@ -1,20 +1,23 @@
 
+[
+
+
+
 
 
 
 {  "include": "~/.config/waybar/hardwaremodules",
       "name": "status",
-    "mode": "",
-    "layer": "top", // Waybar at top layer
+    "layer": "overlay", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-  "height": 33, // Waybar height (to be removed for auto height)
+  "height": 0, // Waybar height (to be removed for auto height)
   //"width": 1360, // Waybar width
-   "spacing": 4, // Gaps between modules (4px)
+   "spacing": 5, // Gaps between modules (4px)
    // Choose the order of the modules
    "margin": "0 0 0 0",
-   "modules-right": ["","group/toolbelt","group#date","clock#date","clock#time"],
-   "modules-center": ["custom/weather","group/group-cpu","group/group-input"],
-   "modules-left": ["custom/nixos","hyprland/workspaces","hyprland/window","cpu#surrogate"],
+   "modules-right": ["group/toolbelt","","","","",""],
+"modules-center": ["","","","","","custom/weather#center","clock#date","custom/notification","mpris#position","",""],
+   "modules-left": ["","custom/nixos","","","hyprland/window","","cpu#surrogate",""],
    // Modules configuration
    "hyprland/workspaces": {
 	"format": "{icon}",
@@ -22,14 +25,15 @@
 	"format-icons": {
       
         "10": "Session Managed",
-        "empty": "<span foreground='#6C6C6C'></span>",
-        "default": "",
-        "active": "<span ></span>"
+        "empty": "<span size='small' foreground='#6C6C6C'></span>",
+        "default": "<span size='small' ></span>",
+        "active": "<span size='xx-small' ></span>"
 	},
        "persistent_workspaces": {
              "HDMI-A-1": 7 // but only three on HDMI-A-1
        }
 },
+
    "keyboard-state": {
        "numlock": true,
        "capslock": true,
@@ -172,8 +176,8 @@
     "format-bluetooth": "{icon}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": "<span foreground=''></span>",
-    "format-source": "<span size='x-large'>󰺹 </span>",
-    "format-source-muted": "<span foreground='#434343'size='x-large'>󰺹 </span>",
+    "format-source": "<span>󰺹 </span>",
+    "format-source-muted": "<span foreground='#BA1B1B'>󰺹</span> ",
     "format-icons": {
         "headphone": "",
         "hands-free": "",
@@ -196,8 +200,8 @@
     "format-bluetooth": "{icon}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": "<span foreground=''></span>",
-    "format-source": "<span size='medium' foreground='#ffffff'> Transmitting Audio  </span>",
-    "format-source-muted":  "<span size='medium' foreground='#323232' >Microphone Halted   </span>",
+    "format-source": "<span size='medium'>Transmitting Audio  </span>",
+    "format-source-muted":  "<span size='medium' foreground='#FF8181' >Microphone Halted   </span>",
     "format-icons": {
         "headphone": "",
         "hands-free": "",
@@ -300,7 +304,7 @@
   },
 
   "clock#date": {
-    "format": "{:%a %b %d}"
+    "format": "{:%A %B %d, %Y}"
   },
 
   "group/battery": {
@@ -356,15 +360,14 @@
     "drawer": {
         "transition-duration": 400,
         "children-class": "not-cpu",
-        "transition-left-to-right": false,
+        "transition-left-to-right": true,
     },
     "modules": [
-        "cpu#icon",
-        "memory#icon",
+        "",
         "temperature#icon", // First element is the "group leader" and won't ever be hidden
         "cpu#surrogate",
-        "",
-        "mpris#icon"
+        "memory#icon",
+        "cpu#icon"
       
 
     ]
@@ -400,10 +403,10 @@
     "interval": 1,
     "dynamic-order": ["title", "artist", "album", "position", "length"],
 	"player-icons": {
-        "brave": "<span foreground='#ff5b5b' size='xx-large'>  </span>",
-        "firefox": "<span foreground='#ff6d32' size='xx-large'> </span>",
-		"default": "<span foreground='#45b3e7' size='xx-large'>󰝚</span>",
-        "spotify": "<span foreground='#6FBF52'size='xx-large'>󰓇 </span>",
+        "brave": "<span foreground='#ff5b5b' size='x-large'>  </span>",
+        "firefox": "<span foreground='#ff6d32' size='x-large'> </span>",
+		"default": "<span foreground='#45b3e7' size='x-large'>󰝚</span>",
+        "spotify": "<span foreground='#6FBF52'size='x-large'>󰓇 </span>",
 		"mpv": "🎵"
 	},
 	"status-icons": {
@@ -418,23 +421,23 @@
   },
 
 "mpris#icon": {
-	"format": "    {player_icon} {status_icon}  {position}      ",
-    "interval": 1,
-	"format-paused": "    {player_icon} {status_icon}  {position}      ",
+	"format": "{status_icon}     {player_icon}   {title}   ",
+    "interval": 0,
+	"format-paused": "{status_icon}       {player_icon}   {title}   ",
     "on-scroll-down" : "playerctld shift",
     "on-scroll-up" : "playerctld unshift",
-    "max-length": 40,
+    "max-length": 38,
 	"player-icons": {
 		"brave": "<span foreground='#FF3F3F' size='x-large'> </span>",
         "firefox": "<span foreground='#4EA8D8' size='x-large'> </span>",
 		"default": "<span foreground='#B300C2' size='x-large'>󰠃 </span>",
-        "spotify": "<span foreground='#89C452'size='x-large'>󰓇 </span>",
+        "spotify": "<span foreground='#89C452'size='x-large'>󰓇</span>",
 		"mpv": "🎵"
 	},
 	"status-icons": {
-		"paused": "<span foreground='#FF3333' size='x-large'> 󰐊 </span>",
-        "playing": "<span foreground='#00ff00' size='x-large'> 󰏤 </span>",
-        "stopped": "<span foreground='#ff0000' size='x-large'> --</span>"
+		"paused": "<span foreground='#FF4646' size='x-large'></span>",
+        "playing": "<span foreground='#46FF4E' size='x-large'></span>",
+        "stopped": "<span foreground='#ffffff' size='x-large'> --</span>"
 	}
 	// "ignored-players": ["firefox"]
 },
@@ -456,40 +459,44 @@
 	// "ignored-players": ["firefox"]
 },
 
+
+
 "cava": {
     //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
             "framerate": 48,
           // "autosens": 0,
-           "sensitivity": 2,
-            "sleep_timer": 1,
+           "sensitivity": 3,
+            "sleep_timer": 40,
             "interval": 1,
-            "bars": 12,
+            "bars": 40,
             "lower_cutoff_freq": 50,
             "higher_cutoff_freq": 21000,
             "method": "pulse",
-            "rotate": 0,
+            "rotate":0,
             "source": "auto",
             "stereo": true,
             "hide_on_silence": false,
             "reverse": false,
-            "bar_delimiter": 32,
+            "bar_delimiter": 032,
             "monstercat": true,
             "waves": true,
             "noise_reduction": 0.87,
-            "input_delay": 1,
-            "format-icons" : ["<span>▁</span>","▃","▄","<span foreground='#91D8FF'>▃</span>","<span foreground='#82d9ff'>▄</span>","<span foreground='#33c1ff'>▆</span>" ],
+            "input_delay": 0,
+            "format-icons" : ["<span>▁</span>","▃","▄","<span foreground='#71D4FF'>▅</span>","<span foreground='#67D1FF'>▆</span>","<span foreground='#00B2FF'>█</span>" ],
             "actions": {
                        "on-click-right": "mode"
                        }
         },
 "gamemode": {
-    "format": "{count}  {glyph}",
-    "format-alt": "{glyph} {count}",
-    "hide-not-running": true,
+    
+    "format": "{glyph}",
+    "format-alt": "{count}",
+    "hide-not-running": false,
     "use-icon": true,
     "icon-name": "input-gaming-symbolic",
     "icon-spacing": 4,
     "icon-size": 20,
+    
     "tooltip": true,
     "tooltip-format": "Games running: {count}"
 },
@@ -500,22 +507,27 @@
     "tooltip": false
 },
 
-
-"custom/swaync": {
-    "tooltip": false,
-    "on-click": "swaync-client -t",
-    "format": "",
+"custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
     "format-icons": {
-      "notification": "󱅫",
-      "none": "󰂚",
-      "dnd-notification": "󱏧<span foreground='red'><sup></sup></span>",
-      "dnd-none": "󱏧",
-      "inhibited-notification": "󰂚<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "󰂚",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": "󱏧"
-    }
-},
+      "notification": "<span foreground='#658DFF'></span>  ",
+      "dnd-notification": "<span foreground='#465A95'></span>  ",
+      "none": "<span foreground='#944040'></span>   ",
+  
+      "dnd-none": "   ",
+      "inhibited-notification": "  ",
+      "inhibited-none": "  ",
+      "dnd-inhibited-notification": "  ",
+      "dnd-inhibited-none": "  "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
 
 "bluetooth": {
 	"format": " {status}",
@@ -553,10 +565,10 @@
         "transition-left-to-right": true,
     },
     "modules": [
-        "custom/music", // First element is the "group leader" and won't ever be hidden
+        "", // First element is the "group leader" and won't ever be hidden
         "custom/search",
         "custom/apps",
-        "custom/lutris"
+        ""
     ]
 
 },
@@ -589,9 +601,76 @@
 "custom/killer": {
     "format": "",
     "on-click": "hyprctl kill",
-}
+},
+
+
+
+
+},
+
+
+{  "include": "~/.config/waybar/hardwaremodules",
+      "name": "status",
+    "mode": "",
+    "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+  "height": 0, // Waybar height (to be removed for auto height)
+  //"width": 1360, // Waybar width
+   "spacing": 0, // Gaps between modules (4px)
+   // Choose the order of the modules
+   "margin": "0 0 0 0",
+   "modules-right": ["","","clock#time",""],
+   "modules-center": ["",""],
+   "modules-left": ["group/group-cpu","group/group-input","","hyprland/workspaces","hyprland/window","",""],
+   // Modules configuration
+   "hyprland/workspaces": {
+	"format": "{icon}",
+    "format-active": "{icon} {name}",
+	"format-icons": {
+      
+        "10": "Session Managed",
+        "empty": "<span size='small' foreground='#6C6C6C'></span>",
+        "default": "<span size='small' ></span>",
+        "active": "<span size='xx-small' ></span>"
+	},
+       "persistent_workspaces": {
+             "HDMI-A-1": 7 // but only three on HDMI-A-1
+       }
+},
+
+
+"wlr/taskbar": {
+	"format": "{icon}",
+	"icon-size": 14,
+	"icon-theme": "Numix-Circle",
+	"tooltip-format": "{title}",
+	"on-click": "activate",
+	"on-click-middle": "close",
+	"ignore-list": [
+	    "Alacritty"
+	],
+	"app_ids-mapping": {
+		"firefoxdeveloperedition": "firefox-developer-edition"
+	},
+	"rewrite": {
+		"Firefox Web Browser": "Firefox",
+		"Foot Server": "Terminal"
+	}
+},
+
+
+"clock#time": {
+	"format": "{:%I:%M %p}"
+    
+  },
+
 
 }
+
+
+
+
+]
 
 
 

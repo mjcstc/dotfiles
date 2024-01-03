@@ -1,0 +1,1163 @@
+*{
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'JetBrainsMono Nerd Font';
+  font-size: 12px;
+  
+}
+/*@import url('file:///home/cjrminus/.cache/wal/colors.css');*/
+
+
+
+#custom-swaync {
+  padding-right: 6;
+}
+#custom-music,
+#custom-killer,
+#custom-code,
+#custom-apps{
+padding-left: 30;
+font-size: 16;
+padding-right: 1;
+}
+
+#custom-music {
+padding-right: 10;
+
+}
+#custom-apps {
+padding-right: 10;
+
+}
+#custom-lutris {
+padding-right: 10;
+padding-left: 30;
+font-size: 14;
+
+}
+#custom-killer {
+font-size: 13;
+padding-top: 2;
+padding-right: 10;
+color: crimson
+
+}    
+
+window#waybar.top {
+
+animation-name: pulse;
+background-color: rgba(0, 0, 0, 0.555);
+animation-duration: .7s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+
+}
+   
+window#waybar.bottom {
+
+background-color: rgb(0, 0, 0);
+animation-duration: .7s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+border-radius: 0;
+}
+
+
+
+
+window#waybar.top.empty {
+animation-name: sparese;
+background-color: rgba(255, 255, 255, 0);
+animation-duration: 1s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+
+}
+
+window#waybar.top.fullscreen {
+animation-name: pulse2;
+background-color: rgba(255, 255, 255, 0.932);
+animation-duration: 1s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+}
+
+window#waybar.top.discord {
+animation-name: discord;
+background-color: rgba(164, 138, 255, 0.932);
+animation-duration: 1s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+border-bottom: 0 solid rgb(123, 151, 228);
+}
+
+window#waybar.top.brave-browser {
+animation-name: brave;
+background-color: rgba(255, 255, 255, 0.932);
+animation-duration: .7s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+
+}
+
+
+
+window#waybar.top.librewolf {
+animation-name: librewolf;
+background-color: rgba(255, 255, 255, 0.932);
+animation-duration: .7s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+
+}
+
+
+window#waybar.top.wlogout {
+animation-name: pulse3;
+background-color: rgba(255, 255, 255, 0.932);
+animation-duration: .7s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+color: #97b3ff;
+}
+
+#pulseaudio-slider slider {
+min-height: 0px;
+min-width: 0px;
+opacity: 0;
+background-image: none;
+border: none;
+box-shadow: none;
+}
+#pulseaudio-slider trough {
+min-height: 80px;
+min-width: 10px;
+border-radius: 5px;
+background-color: black;
+}
+#pulseaudio-slider highlight {
+min-width: 10px;
+border-radius: 5px;
+background-color: green;
+}
+
+
+@keyframes librewolf {
+from {
+   background-color: rgba(16, 16, 16, 0.454);
+}
+  to{
+  background-color: #0f0f0f;
+  color: rgba(255, 255, 255, 0.781);
+  
+  }
+}
+
+@keyframes brave {
+from {
+   background-color: rgba(16, 16, 16, 0.454);
+}
+  to{
+  background-color: #222323;
+  color: rgba(255, 255, 255, 0.781);
+  
+  }
+}
+
+@keyframes genshin {
+from {
+   background-color: rgba(16, 16, 16, 0.454);
+}
+  to{
+  background: linear-gradient(0deg,transparent,black);
+  color: rgba(255, 255, 255, 0.781);
+  }
+}
+
+@keyframes pulse3 {
+from {
+   background-color: rgba(16, 16, 16, 0.454);
+}
+  to{
+  background-color: rgb(33, 129, 255);
+  color: rgba(255, 255, 255, 0.781);
+  }
+}
+
+@keyframes CODE {
+from {
+   background-color: rgba(255, 255, 255, 0.454);
+}
+  to{
+  background-color: #313239;
+  color: rgba(255, 255, 255, 0.781);
+  }
+}
+
+@keyframes discord {
+
+  to{
+  background-color: #232428;
+  color: rgba(255, 255, 255, 0.781);
+  }
+}
+
+window#waybar.osu {
+  background-color: rgba(0, 0, 0, 0.363);
+  animation-name: pulse;
+  animation-duration: .7s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}   
+
+#temperature.critical {
+  border-bottom: #ff383865;
+  animation-name: blink;
+animation-duration: 1s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+@keyframes blink2 {
+25% {
+ color: #a4ff80;
+}
+50% {
+  color: #1c4d17;
+ }
+ 75% {
+  color: #a4ff80;
+ }
+ 100% {
+  color: #1c4d17;
+ }
+
+}
+
+
+
+
+@keyframes blink {
+  from {
+   color: #59ff3c;
+  }
+  to {
+    color: #000000;
+
+}
+}
+
+
+@keyframes pulse {
+from {
+  background-color: rgba(22, 22, 22, 0);
+  color: #ffffff;
+}
+  to{
+  background-color: rgba(0, 0, 0, 0.404);
+  color: rgb(255, 255, 255);
+  }
+}
+@keyframes pulse2 {
+from {
+   background-color: rgba(0, 0, 0, 0.454);
+}
+  to{
+  background-color: rgb(14, 14, 14);
+  color: rgba(255, 255, 255, 0.781);
+
+  }
+}
+
+@keyframes sparese {
+from {
+   background-color: rgba(0, 0, 0, 0);
+}
+  to{
+  background-color: rgba(51, 51, 51, 0);
+  color: rgb(0, 0, 0);
+
+  }
+}
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
+}
+
+#custom-notification {
+
+}
+
+.modules-center {
+
+margin-bottom: 0;
+font-weight: 500;
+border: 0 solid rgba(179, 179, 179, 0.507);
+background-color: rgb(0, 0, 0);
+margin-bottom: 11;
+color: #ffffff;
+border-bottom-right-radius: 9;
+border-bottom-left-radius: 8;
+text-shadow: 0 0 2px rgba(0, 0, 0, 0.512);
+border-radius:0;
+border: 0 solid rgb(15, 15, 15);
+border-bottom-right-radius: 9;
+border-bottom-left-radius: 9;
+}
+
+#custom-weather.center {
+background-color: white;
+}
+
+
+#temperature.icon {
+  padding-right: 10;
+  padding-left: 0;
+}
+
+#memory.icon {
+font-size: 12;
+padding-left: 10;
+padding-right: 15;
+  font-weight: 500;
+}
+
+
+.modules-left {
+
+}
+
+.modules-right {
+
+margin-right: 10;
+font-weight: 700;
+border: 0 solid rgba(0, 0, 0, 0.562);
+border-top: 0 solid black;
+background-color: rgba(0, 0, 0, 0);
+border-radius: 0;
+border:0 solid rgba(255, 255, 255, 0.226);
+text-shadow: 0 0 3px rgba(255, 255, 255, 0);
+
+}
+
+/* Individual Modules */
+#old-colors {color: #cecece;}
+/* }
+#pulseaudio{
+  border: 1 solid rgba(255, 255, 255, 0);
+  font-size: 24;
+  background-color: rgba(47, 47, 47, 0); 
+  margin: 0;
+  font-weight: 600;
+  border-radius: 4;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#pulseaudio.percentage{
+  margin: 0;
+  font-size: 18;
+  border: 0;
+  background: transparent;
+}
+*/
+#pulseaudio.icon {
+  background-color: rgba(25, 0, 70, 0);
+  border: 0 solid rgb(255, 131, 131);
+  border-radius: 3;
+  margin-top: 0;
+  padding-left: 2;
+
+  padding-right: 8;
+  padding-left: 4;
+  margin-bottom: 0;
+  font-weight: 600;
+  margin-left: 2;
+padding-left: 20;
+  font-size: 17;
+}
+
+#tray {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0 solid rgb(0, 132, 255);
+  border-radius: 20;
+  padding-left: 5;
+  margin-left: 4;
+  margin: 5;
+  color: #ffffff;
+  padding-right: 5;
+  font-weight: 500;
+  text-shadow: 5 5 5px rgb(0, 0, 0);
+ 
+}
+
+#custom-nixos {
+font-size: 24;
+padding-left:8;
+padding-right: 0;
+text-shadow: 2 2 5px rgba(0, 0, 0, 0.171);
+border-top-right-radius: 4;
+border-bottom-right-radius: 15;
+
+
+}
+
+
+
+#custom-weather {
+font-family: pretendard;
+  background-color: rgba(59, 59, 59, 0.918);
+  color: #000000;
+  padding-left: 5;
+  padding-right: 5;
+  color: rgb(128, 210, 255);
+  font-weight: 700;
+  border-radius: 14;
+
+ margin: 2;
+  text-shadow: 1 1 3px rgb(22, 22, 22);
+  background-color: rgba(255, 255, 255, 0);
+}
+
+
+
+#backlight {
+  font-size: 20;
+  margin: 0
+}
+#backlight.icons {
+  font-size: 24;
+  margin: 0;
+  border-radius: 0;
+  border-top-left-radius:  4;
+  border-top-right-radius: 4;
+  background-color: rgba(0, 255, 225, 0);
+  border: 0 solid rgba(0, 255, 225, 0);
+}
+
+#memory {
+ 
+
+}
+
+#gamemode {
+background-color: transparent;
+animation: revert 2.5s;
+animation-fill-mode: forwards;
+margin: 0;
+border: 0 solid ;
+animation-iteration-count: 1;
+font-size: 0;
+padding-left: 0;
+color: #313239;
+margin-left: 0;
+border-radius: 10;
+}
+
+#gamemode.running {
+background-color: transparent;
+animation: swing 4s;
+animation-fill-mode: forwards;
+margin: 0;
+
+border: 0 solid transparent;
+border-radius: 6;
+animation-iteration-count: 1;
+font-size: 0;
+margin-left: 5;
+border-radius: 10;
+
+}
+
+@keyframes swing {
+25% {
+  padding-left: 0;
+  padding-right: 0;
+  color: transparent;
+  background-color: transparent;
+  
+}
+
+30% {
+  color: transparent;
+}
+ 50%{
+  border: 2 solid rgba(0, 0, 0, 0);
+
+  padding-right: 25;
+  padding-left: 35;
+
+  background-color:  rgba(68, 0, 255, 0.616);
+}
+
+75%{
+  border: 2 solid rgba(0, 0, 0, 0);
+  background-color:  pink;
+  
+ 
+  padding-right: 30;
+  padding-left: 35;
+  font-size: 25;
+  border: 1 solid rgba(0, 0, 0, 0);
+}
+
+80% {
+
+  background-color:  rgb(0, 153, 255);
+  padding-right: 50;
+  padding-left: 10;
+  font-size: 25;
+  border: 2 solid rgba(0, 0, 0, 0);
+}
+
+90% {
+ 
+  border: 2 solid white;
+  background-color:  transparent;
+  padding-right: 50;
+  padding-left: 5;
+  font-size: 25;
+  border: 2 solid rgba(0, 0, 0, 0);
+}
+
+100%{
+
+  color: #0099ff;
+  padding-right: 4;
+  padding-left: 9;
+  margin-left: 0;
+
+  font-size: 0;
+  border: 0 solid rgba(0, 0, 0, 0);
+  border-radius: 5;
+
+}
+
+}
+
+
+@keyframes revert {
+25% {
+  padding-left: 0;
+  padding-right: 0;
+  color: transparent;
+  background-color: transparent;
+  
+}
+
+30% {
+  color: transparent;
+}
+ 50%{
+
+  padding-right: 25;
+
+  background-color:  transparent;
+}
+
+75%{
+  background-color:  black;
+  
+  padding-left: 25;
+  font-size: 0;
+}
+
+100%{
+
+  color: #2e2e2e;
+  padding-right: 4;
+  padding-left: 4;
+  background-color:rgba(0, 0, 0, 0)
+  
+}
+
+}
+
+
+#pulseaudio.center {
+padding-right: 3;
+padding-left: 0;
+color: #000000;
+font-size: 16;
+font-weight: 700;
+
+text-shadow: 1 1 5px rgba(255, 255, 255, 0);
+margin-left: 0;
+animation-name: blink;
+animation-duration:.5s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+margin: 0;
+}
+
+
+#temperature.text {
+  font-size: 11;
+  padding: 0;
+  padding-right: 0;
+}
+
+
+@keyframes gradient_f_nh {
+0% {
+  background-position: 0% 200%;
+}
+100% {
+  background-position: 200% 200%;
+}
+}
+
+
+#clock.date {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+
+  background-color: rgba(58, 58, 58, 0);
+  border: 0 solid rgb(255, 131, 131);
+  border-radius: 0;
+  margin-top: 0;
+  padding-left: 5;
+
+  padding-right: 10;
+  margin-bottom: 0;
+  margin-left: 4;
+  margin: 0;
+  border-bottom-right-radius: 0;
+
+ 
+
+
+}
+
+#mpris.position {
+font-size: 9.3;
+margin-left: 0;
+padding-left: 4;
+border: 0 solid rgba(255, 255, 255, 0.116);
+border-radius: 20;
+background-color: rgba(255, 255, 255, 0.041);
+color: #ffffff;
+margin: 0;
+}
+
+#mpris.icon.paused {
+color: #ff9797;
+
+border-radius: 91;
+}
+/*
+#mpris.spotify {
+  font-size: 12;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  background-color: rgba(255, 32, 32, 0);
+  border: 0 solid rgb(131, 255, 135);
+  border-radius: 3;
+  text-shadow: 5 5 5px rgba(0, 0, 0, 0.259);
+  padding-left: 5;
+  color: #ffffff;
+  border-radius: 13;
+  padding-right: 5;
+  
+
+
+  
+}
+*/
+#mpris {
+  font-size: 10;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0 solid rgb(255, 131, 131);
+  border-radius: 13;
+  text-shadow: 2 2 2px rgba(0, 0, 0, 0.233);
+  padding: 2;
+  padding-left: 5;
+  padding-right: 5;
+  margin: 0;
+  color: #ffffff;
+  margin-right: 01;
+
+  
+}
+
+#clock.time {
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+
+  background-color: rgba(22, 22, 22, 0);
+  border: 0 solid rgb(255, 131, 131);
+  border-radius: 0;
+  padding-left: 3;
+
+  padding-right: 7;
+  margin: 2;
+  margin-left: 0;
+
+}
+
+#window {
+font-family: Vegur;
+font-weight:900;
+padding-left: 4;
+font-size: 11;
+
+}
+
+#mpris.bottom {
+font-size: 11;
+background-color: transparent;
+border-radius: 0;
+border-bottom-right-radius: 9;
+border-bottom-left-radius: 9;
+border: 0 solid white;
+color: #ffffff;
+border-top-left-radius: 9;
+margin: 0;
+}
+
+
+
+#cava {
+padding-top: 5;
+font-weight: 100;
+color: rgba(255, 255, 255, 0.438);
+margin: 0;
+padding-left: 0;
+padding-right: 0;
+font-size: 24;
+border: 0 solid rgb(0, 140, 255);
+background: rgba(12, 12, 12, 0);
+padding-top: 3.2;
+text-shadow: 1 2 6px rgb(255, 255, 255);
+background-size: 400% 400%;
+transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+border-radius: 0;
+font-size: 3;
+padding-left: 0;
+padding-right: 0;
+text-shadow: 0 0 4px rgb(255, 255, 255);
+border: 0 solid rgba(255, 255, 255, 0.068);
+padding-top: 0;
+padding-left: 4;
+padding-right: 4;
+border-radius: 7;
+
+margin: 5;
+
+}
+
+
+
+
+
+
+
+#mpris.icon {
+  font-family: pretendard;
+  font-size: 10;
+  color: #7b9ce4;
+  margin-right: 0;
+  padding-right: 3;
+  padding-left: 8;
+
+  border-radius: 10;
+  background-color: rgba(255, 255, 255, 0);
+  font-weight: 600;
+    margin: 6;
+
+}
+#mpris.position.spotify,
+#mpris.icon.spotify{
+
+background-color: transparent;
+animation-name: shiftspotify;
+animation-duration: 1s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+
+color: #ff653f;
+
+
+}
+
+#mpris.icon.chromium{
+
+animation-name: shift4;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+
+color: #ff653f;
+
+
+}
+
+
+#mpris.icon.firefox{
+
+animation-name: shiftfirefox;
+animation-duration: 1s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+
+color: #ff653f;
+
+
+}
+#mpris.position.brave,
+#mpris.icon.brave,
+#mpris.icon.chrome{
+
+animation-name: shiftbrave;
+animation-duration: 1s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+
+color: #ffffff;
+
+
+}
+
+
+
+@keyframes glow {
+to {
+    color: rgb(255, 255, 255);
+    background:linear-gradient(0deg,rgba(209, 209, 209, 0),rgb(255, 255, 255));
+}
+
+}
+
+@keyframes shiftspotify {
+
+from {
+  background:linear-gradient(0deg,rgba(54, 255, 36, 0.116),rgb(0, 0, 0));
+}
+to {
+    color: rgb(255, 255, 255);
+    background:linear-gradient(-120deg,rgb(0, 184, 0),rgb(0, 163, 238));
+    border-radius: 20;
+}
+
+}
+
+@keyframes shiftfirefox {
+
+from {
+  background:linear-gradient(0deg,rgba(35, 112, 255, 0.377),rgb(0, 0, 0));
+}
+to {
+    color: rgb(255, 255, 255);
+    background:linear-gradient(-70deg,rgb(35, 123, 255),rgb(0, 41, 153));
+    border-radius: 20;
+}
+
+}
+
+
+
+@keyframes shiftbrave {
+
+from {
+  background:linear-gradient(0deg,rgba(255, 255, 255, 0),rgb(0, 0, 0));
+}
+to {
+    color: rgb(255, 255, 255);
+    background:linear-gradient(70deg,rgb(255, 35, 35),rgba(225, 0, 255, 0.753));
+    border-radius: 20;
+    
+}
+
+}
+
+@keyframes shift {
+
+
+to {
+  background: linear-gradient(90deg,rgb(104, 0, 0),red);
+  border-radius: 10;
+}
+
+}
+
+@keyframes shift2 {
+
+from {
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 18, 18, 0.57);
+}
+to {
+    color: rgb(62, 91, 255);
+    background-color: rgba(255, 72, 72, 0);
+    
+}
+
+}
+#mpris.icon {
+
+color: rgb(255, 255, 255);
+animation-name: shift2;
+animation-duration: .5s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+}
+#mpris.position.paused,
+#mpris.icon.paused {
+animation-name: shift;
+animation-duration: 1s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+color: white;
+border: 0;
+}
+
+
+
+
+
+#workspaces {
+margin: 0;
+font-weight: 600;
+margin-left: 5;
+border: 0 solid rgb(92, 92, 92);
+
+background-color: rgba(0, 0, 0, 0);
+
+
+border-radius: 20;
+text-shadow: 0 0 6px rgb(0, 0, 0);
+}
+
+
+
+#workspaces button {
+    min-width: 3px;
+    min-height: 2px;
+    
+  }
+
+#workspaces button {
+  font-family: pretendard;
+  background-color: rgba(7, 0, 0, 0);
+  padding: 0px;
+  margin: 0;
+  border-radius: 200;
+  padding-left: 5;
+  padding-right: 5;
+  margin-left: 1;
+  font-weight: 400;
+  margin-right: 1;
+  border: 0 solid rgba(0, 0, 0, 0);
+  color: rgba(148, 255, 162, 0.815);
+  transition: all 0.35s cubic-bezier(0,-.7,0,1);
+  margin: 4;
+  animation-name: blink2;
+animation-duration: 4s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+
+  border-radius: 20000;
+}
+#workspaces button.active {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: normal;
+  font-size: 12;
+  padding-left: 30;
+  padding-right: 30;
+  text-shadow: 2 2 2px rgba(0, 0, 0, 0);
+
+  color: transparent;
+  background-color: rgb(255, 255, 255);
+  border:  solid rgba(0, 0, 0, 0.39);
+
+  border-radius: 20000;
+}
+
+
+
+@keyframes gradient_f {
+0% {
+  background-position: 0% 200%;
+}
+  50% {
+      background-position: 200% 0%;
+  }
+100% {
+  background-position: 400% 200%;
+}
+}
+
+
+#battery:not(.icon) {
+
+  font-size: 12;
+}
+#battery.percentage {
+  font-size: 11.5;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  font-weight: 500;
+  padding-right: 0;
+}
+#battery.icon{
+  border: 0 solid rgba(40, 95, 61, 0);
+  font-size: 17;
+  background-color: rgba(47, 47, 47, 0); 
+  margin-left: 0;
+  padding-left: 2;
+  border-radius: 0;  
+  padding-right: 0;
+}
+
+
+#battery.charging {
+  border-bottom: 2 solid green;
+  animation-name: blink2;
+animation-duration: 3s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+#pulseaudio.muted {
+  border-bottom: 0 solid rgba(255, 0, 0, 0.74);
+
+}
+#custom-swaync,
+#custom-search {
+  padding-left: 30px;
+  font-size: 14;
+  
+}
+
+
+
+#cpu.icon {
+  background-color: rgba(0, 0, 0, 0);
+ color: #363636;
+
+  margin-right: 8;
+  font-weight: 500;
+  margin-left: 8;
+
+ 
+
+}
+
+#custom-power {
+font-size: 20;
+padding-top: .5;
+padding-right: 13;
+padding-left: 10;
+color: rgb(255, 63, 63);
+border-top-left-radius: 7;
+border-bottom-left-radius: 7;
+background-color:rgba(255, 255, 255, 0);
+}
+#custom-browser {
+font-size: 17;
+padding-right: 5;
+}
+#battery {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+@keyframes animateBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+
+/*
+#workspaces {
+  background-color: rgba(19, 19, 19, 0.918);
+  border: 2 solid rgba(95, 95, 95, 0.671);
+  border-radius: 10;
+  margin-top: 1;
+  margin-bottom: 1;
+  
+  }
+  
+  #workspaces button {
+      min-width: 3px;
+      min-height: 2px;
+    }
+  
+  
+    #custom-nixos {
+font-size: 23;
+padding-left: 4;
+padding-right: 14;
+text-shadow: 2 2 5px rgb(0, 0, 0);
+background: linear-gradient(90deg,rgb(143, 143, 143),rgb(87, 87, 87));
+border-top-right-radius: 4;
+border-bottom-right-radius: 15;
+color: rgb(255, 255, 255);
+background-size: 300% 100%;
+animation: animateBg 3s infinite linear;
+background-image: linear-gradient(90deg,rgb(255, 255, 255),rgb(158, 158, 158),rgb(255, 255, 255),rgb(158, 158, 158));
+}
+
+
+    #workspaces button {
+      background-color: rgba(255, 255, 255, 0);
+      margin-right: 10px;
+      padding: 0px;
+      padding-left: 10;
+      padding-right: 10;
+      margin-left: 10;
+      padding-bottom: 0px;
+      font-weight: bolder;
+      color: rgba(88, 88, 88, 0.651);
+      transition: all 0.35s cubic-bezier(.55,-0.68,.48,1.68);
+  }
+    #workspaces button.active {
+      margin-left: 0;
+      padding-right: 50;
+      padding-left: 50;
+      border-radius: 8;
+      margin-right: 0;
+      color: rgb(0, 0, 0);
+      background-color: rgb(255, 255, 255);
+    }
+  */
+11111
