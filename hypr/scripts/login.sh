@@ -3,11 +3,12 @@
 #start swww the wallpaper daemon
 swww init 
 
+export WAYLAND_DISPLAY=1 &WAYLAND_DISPLAY
 
 sleep 1
 
 #waybar & chime
-nohup waybar -c ~/.config/waybar/riceconfig2 -s ~/.config/waybar/ricenoanim2.css & 
+nohup waybar  & 
 
 # mpv ~/Downloads/macchime.mp3
 
@@ -15,4 +16,4 @@ nohup waybar -c ~/.config/waybar/riceconfig2 -s ~/.config/waybar/ricenoanim2.css
 #start Swaync and other related items
 
 swaync
-swayosd-server
+avizo-server

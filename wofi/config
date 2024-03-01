@@ -1,27 +1,26 @@
 ## Wofi Config
 
 ## General
-show=dmenu
+show=drun
 prompt=Apps
-normal_window=false
-layer=bg
+normal_window=true
+layer=overlay
 term=foot
-columns=0
+columns=2
 
 ## Geometry
-width=100%
-height=95%
-location=0
+width=60%
+height=50%
+location=top_left
 orientation=vertical
 halign=fill
 line_wrap=off
 dynamic_lines=false
 
-
 ## Images
 allow_markup=true
 allow_images=true
-image_size=40
+image_size=32
 
 ## Search
 exec_search=false

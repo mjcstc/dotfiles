@@ -28,32 +28,66 @@
         
  
     },
-"cpu#icon": {
-       "format-alt": "",
-       "format": "{icon}",
-       "format-icons": ["<span foreground='#95FF72' size='x-large'>󰄬  󱑲 </span>","<span foreground='#95FF72' size='x-large'>󰄬  󱑲 </span>","<span foreground='#95FF72' size='x-large'>󰄬  󱑲 </span>","<span foreground='#FF9E43' size='x-large'>  󱑲 </span>","<span foreground='#FF9E43' size='x-large'>  󱑲 </span>","<span foreground='#FF9E43' size='x-large'>  󱑲 </span>","<span foreground='#DC7633' size='x-large'>  󱑳 </span>","<span foreground='#DC7633' size='x-large'>  󱑳 </span>","<span foreground='#DC7633' size='x-large'>  󱑳 </span>","<span foreground='#F5B041' size='x-large'>  󱑳 </span>","<span foreground='#E74C3C' size='x-large'>   󱑴 </span>","<span foreground='#E74C3C' size='x-large'>  󱑴 </span>","<span foreground='#E74C3C' size='x-large'>  󱑴 </span>"],
-       "tooltip": false,
-       "on-right-click": "kitty btop",
-       "interval": 10,
-       "max-length": 20, 
-       "rotate": 0,
-       "min-length": 0 
-       
 
-   },
+
+
+    "memory": {
+        "format": "{icon} \n<span foreground='#ffffff' size='medium'>{used:0.1f}GB</span> ",
+        "format-icons": [
+        "<span foreground='#a5a5a5' size='medium'>RAM</span>","<span foreground='#a5a5a5' size='medium'>RAM</span>",
+        "<span foreground='#cbff68' size='medium'>RAM</span>","<span foreground='#cbff68' size='medium'>RAM</span>",
+        "<span foreground='#ffce68' size='medium'>RAM</span>","<span foreground='#ffce68' size='medium'>RAM</span>",
+        "<span foreground='#ff6868' size='medium'>RAM</span>","<span foreground='#ff6868' size='medium'>RAM</span>"
+    ],
+        "tooltip": false,
+    
+        "interval": 2,
+     
+        "rotate": 0,
+     
+        
+    
+    },
+    "memory#icon": {
+        "format": "{icon}",
+        "format-alt": "{icon}",
+        "format-icons": [
+        "<span foreground='#a5a5a5' size='medium'>󰋙</span>","<span foreground='#a5a5a5' size='medium'>󰫃</span>",
+        "<span foreground='#cbff68' size='medium'>󰫄</span>","<span foreground='#cbff68' size='medium'>󰫅</span>",
+        "<span foreground='#ffce68' size='medium'>󰫆</span>","<span foreground='#ffce68' size='medium'>󰫇</span>",
+        "<span foreground='#ff6868' size='medium'>󰫇</span>","<span foreground='#ff6868' size='medium'>󰫈</span>"
+    ]
+    },
+    
 
    "cpu": {
-    "format": "{icon}  <span foreground='#ffffff' size='small'>{usage}%</span>       <span foreground='#87cfff' size='large'>󰓅</span>   <span foreground='#ffffff' size='small'>{avg_frequency}Ghz</span>",
+    "format": "{icon} \n<span foreground='#ffffff' size='medium'>{usage}%</span> ",
     "format-alt": "{icon}  {usage}%",
     "format-icons": [
-    "<span foreground='#87ff68' size='large'>󰌪</span>","<span foreground='#87ff68' size='large'>󰌪</span>",
-    "<span foreground='#cbff68' size='large'>󰪠</span>","<span foreground='#cbff68' size='large'>󰪡</span>",
-    "<span foreground='#ffce68' size='large'>󰪢</span>","<span foreground='#ffce68' size='large'>󰪣</span>",
-    "<span foreground='#ff6868' size='large'>󰪤</span>","<span foreground='#ff6868' size='large'>󰪥</span>"
+    "<span foreground='#87ff68' size='medium'>CPU</span>","<span foreground='#87ff68' size='medium'>CPU</span>",
+    "<span foreground='#cbff68' size='medium'>CPU</span>","<span foreground='#cbff68' size='medium'>CPU</span>",
+    "<span foreground='#ffce68' size='medium'>CPU</span>","<span foreground='#ffce68' size='medium'>CPU</span>",
+    "<span foreground='#ff6868' size='medium'>CPU</span>","<span foreground='#ff6868' size='medium'>CPU</span>"
 ],
     "tooltip": false,
 
-    "interval": 4,
+    "interval": 1,
+ 
+    "rotate": 0,
+ 
+    
+
+},
+
+"temperature#alt": {
+    "format": "{icon} ",
+    "format-icons": [
+        "<span foreground='#59d3ff' size='medium'></span>","<span foreground='#87ff68' size='medium'></span>",
+        
+],
+    "tooltip": false,
+
+    "interval": 1,
  
     "rotate": 0,
  
@@ -63,7 +97,7 @@
 
 "network#stats": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": " <span  foreground='#d0ff96'>   {bandwidthUpBits}</span>       <span  foreground='#96c7ff'>   {bandwidthDownBits}</span> ",
+    "format-wifi": "<span  foreground='#ff0000'> 󰁜</span>  {bandwidthUpBits}\n<span  foreground='#ffffff'> 󰁂  {bandwidthDownBits}</span> ",
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
@@ -80,20 +114,7 @@
 
   "clock#time": {
 	"format": "  {:%I:%M %p}"
-    
-  },
-   "memory#icon": {
-       "format-alt": "{icon}  {used:0.1f}GB",
-       "format": "{icon}",
-       "format-icons": ["<span foreground='#646464' size='large'></span>","<span foreground='#646464'size='large'></span>","<span foreground='#646464'size='large'></span>","<span foreground='#FF8362'size='large'></span>","<span foreground='#FF8362'size='large'></span>","<span foreground='#e46876'size='large'></span>"],
-       "interval": 4 
-      
-   },
-
-   "memory#usage": {
-    "format": "{used}GB",
-    "format-alt": "{used}GB",
-    "interval": 4
+ 
 },
    "temperature#text": {
     
@@ -111,11 +132,11 @@
    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
    "critical-threshold": 90,
    "format-icons": [
-    "<span foreground='#59d3ff' size='large'>󱑲</span>","<span foreground='#d4ff59' size='large'>󱑳</span>",
+    "<span foreground='#59d3ff' size='medium'>TEMP</span>","<span foreground='#d4ff59' size='medium'>TEMP</span>",
     
 ],
 
-   "format": "{icon}   {temperatureC}°C"
+   "format": "{icon} \n{temperatureC}°C"
 },
 
 
@@ -130,7 +151,28 @@
     
 
 },
-
+"privacy": {
+	"icon-spacing": 4,
+	"icon-size": 18,
+	"transition-duration": 250,
+	"modules": [
+		{
+			"type": "screenshare",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-out",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-in",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		}
+	]
+},
 "pulseaudio#center": {
     "format-alt-click": "click-right",
     "interval": 1,
@@ -139,8 +181,8 @@
     "format-bluetooth": "{icon}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": "<span foreground=''></span>",
-    "format-source": "<span></span>",
-    "format-source-muted": "<span foreground='#303736'></span>",
+    "format-source": "<span>󰏶</span>",
+    "format-source-muted": "<span foreground='#303736'></span>",
     "format-icons": {
         "headphone": "",
         "hands-free": "",
@@ -153,7 +195,24 @@
     "on-click": "pamixer --default-source -m",
     "on-click-right": "pamixer --default-source -u"
 },
+"cpu#icon": {
+    "format": "{icon}",
+    "format-alt": "{icon}",
+    "format-icons": [
+    "<span foreground='#87ff68' size='large'>󰪞</span>","<span foreground='#87ff68' size='large'>󰪟</span>",
+    "<span foreground='#cbff68' size='large'>󰪠</span>","<span foreground='#cbff68' size='large'>󰪡</span>",
+    "<span foreground='#ffce68' size='large'>󰪢</span>","<span foreground='#ffce68' size='large'>󰪣</span>",
+    "<span foreground='#ff6868' size='large'>󰪤</span>","<span foreground='#ff6868' size='large'>󰪥</span>"
+],
+    "tooltip": false,
 
+    "interval": 4,
+ 
+    "rotate": 0,
+ 
+    
+
+},
 
 "group/group-input": {
     "orientation": "inherit",

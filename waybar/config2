@@ -3,18 +3,18 @@
 
 
 { 
-    "include": ["~/.config/waybar/hardwaremodules","~/.config/waybar/drawers"],
+    "include": ["~/.config/waybar/hardwaremodules2","~/.config/waybar/drawers"],
       "name": "status",
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-  "height": 23, // Waybar height (to be removed for auto height)
-  //"width": 1360, // Waybar width
+    "layer": "top", 
+    "position": "top", 
+  "height": 28, 
+  //"width": 1360, 
    "spacing": 0, // Gaps between modules (4px)
    // Choose the order of the modules
    "margin": "0 0 0 0",
-   "modules-right": ["privacy","cpu","","","temperature#icon","","","","","","","clock#date","clock#time","group/files","pulseaudio#center","network","pulseaudio#icon",""],
-"modules-center": ["","","","","","",""],
-   "modules-left": ["","hyprland/window","hyprland/workspaces","","","","cpu#surrogate",""],
+   "modules-right": ["privacy","group/session","pulseaudio#center","network#stats","cpu#icon","cpu","memory#icon","memory","temperature#alt","temperature#icon","","","","","","","clock#date","clock#time","group/files","","network","pulseaudio#icon",""],
+"modules-center": ["","","","","cava","",""],
+   "modules-left": ["custom/nixos","","hyprland/window","hyprland/workspaces","","","","cpu#surrogate",""],
    // Modules configuration
    
 
@@ -30,8 +30,10 @@
 
    "custom/browser": {
     "format": "",
-    "on-click": "librewolf"
+    "on-click": "librewolf",
 
+
+   
 
    },
    "privacy": {
@@ -191,8 +193,8 @@
     "format-bluetooth": "{icon}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": "<span foreground=''></span>",
-    "format-source": "<span>󰍬 </span>",
-    "format-source-muted": "<span foreground='#ffffff'>󰍬 </span>",
+    "format-source": "<span>  </span>",
+    "format-source-muted": "<span foreground='#ffffff'></span>",
     "format-icons": {
         "headphone": "",
         "hands-free": "",
@@ -273,7 +275,7 @@
    },
 
    "custom/search": {
-    "format":"<span size='large'>󰍉  </span>",
+    "format":"<span size='large'>󰍉 </span>",
     "on-click": "Thunar",
 },
 
@@ -352,9 +354,12 @@
     ]
 },
 
+"custom/label": {
+    "format": "Desktop 󰁔"
+},
 
 "hyprland/window": {
-    "format": "",
+    "format": " {class} ",
     "rewrite": {
         
         "(.*) - osu!": "osu",
@@ -380,6 +385,26 @@
         "cpu#surrogate",
         "memory#icon",
         "cpu#icon"
+      
+
+    ]
+},
+
+
+
+"group/session": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 400,
+        "children-class": "not-cpu",
+        "transition-left-to-right": true,
+    },
+    "modules": [
+        "custom/user",
+        "custom/logout", // First element is the "group leader" and won't ever be hidden
+        "custom/lock",
+        "custom/reboot",
+        "custom/shutdown"
       
 
     ]
@@ -502,7 +527,7 @@
            "sensitivity": 3,
             "sleep_timer": 40,
             "interval": 1,
-            "bars": 100,
+            "bars": 150,
             "lower_cutoff_freq": 50,
             "higher_cutoff_freq": 21000,
             "method": "pulse",
@@ -640,22 +665,22 @@
 
 
 
-}
+},
 
-/*
+
 {  "include": "~/.config/waybar/hardwaremodules",
       "name": "status",
-    "mode": "",
-    "layer": "top", // Waybar at top layer
-    "position": "bottom", // Waybar position (top|bottom|left|right)
-  "height": 15, // Waybar height (to be removed for auto height)
-  //"width": 1360, // Waybar width
+    "mode": "hide",
+    "layer": "overlay", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 0, // Waybar height (to be removed for auto height)
+  "width": 2, // Waybar width
    "spacing": 0, // Gaps between modules (4px)
    // Choose the order of the modules
    "margin": "0 0 0 0",
-   "modules-right": ["","","","network#stats2","user"],
+   "modules-right": ["","","",""],
    "modules-center": ["",""],
-   "modules-left": ["","","","","hyprland/window",""],
+   "modules-left": ["","","","","",""],
    // Modules configuration
 
    "network#stats2": {
@@ -669,10 +694,24 @@
    },
 
 
+"hyprland/window": {
+    "format": "",
+    "rewrite": {
+        
+        "(.*) - osu!": "osu",
+        "(.*) — Mozilla Firefox": "🌎 $1",
+        "(.*) — Ablaze Floorp": "Floorp Web Browser",
+        "(.*) - fish": "> [$1]"
+    },
+    "separate-outputs": true
+    
+},
+
+
 "wlr/taskbar": {
 	"format": "{icon}",
-	"icon-size": 14,
-	"icon-theme": "Numix-Circle",
+	"icon-size": 48,
+
 	"tooltip-format": "{title}",
 	"on-click": "activate",
 	"on-click-middle": "close",
@@ -731,7 +770,6 @@
     "avatar": "~/Pictures/wallpapers/mountain.jpg"
 }
 }
-*/
 
 ]
 
